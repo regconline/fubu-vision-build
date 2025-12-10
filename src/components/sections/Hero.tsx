@@ -29,7 +29,7 @@ export function Hero() {
           >
             <Award className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">
-              Est. 2020 • VAT Registered • Fully Compliant
+              Est. 2020 • Fully Compliant
             </span>
           </motion.div>
 
