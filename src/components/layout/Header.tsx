@@ -69,7 +69,7 @@ export function Header() {
       >
         <div className="container-wide flex items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center gap-3">
             <motion.img
               src={logo}
               alt="K.S FUBU Building Construction"
@@ -78,6 +78,14 @@ export function Header() {
               }`}
               whileHover={{ scale: 1.02 }}
             />
+            <div className={`hidden sm:flex flex-col transition-all duration-300 ${isScrolled ? "gap-0" : "gap-0.5"}`}>
+              <span className={`font-heading font-bold text-deep-charcoal tracking-tight leading-none transition-all duration-300 ${isScrolled ? "text-lg" : "text-xl lg:text-2xl"}`}>
+                K.S FUBU
+              </span>
+              <span className={`font-medium text-trust-navy tracking-wide uppercase transition-all duration-300 ${isScrolled ? "text-[10px]" : "text-xs"}`}>
+                Building Construction
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
