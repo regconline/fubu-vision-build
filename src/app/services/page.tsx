@@ -1,16 +1,18 @@
+"use client";
+
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { 
-  Compass, 
-  HardHat, 
-  Settings, 
-  Wrench, 
-  Droplets, 
+import Link from "next/link";
+import {
+  Compass,
+  HardHat,
+  Settings,
+  Wrench,
+  Droplets,
   ArrowRight,
-  CheckCircle2
+  CheckCircle2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -127,7 +129,7 @@ const services = [
   },
 ];
 
-const Services = () => {
+export default function ServicesPage() {
   return (
     <div className="min-h-screen">
       <Header />
@@ -181,7 +183,7 @@ const Services = () => {
                   <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                     {service.description}
                   </p>
-                  
+
                   <h3 className="text-lg font-heading font-bold text-foreground mb-4">
                     What We Offer
                   </h3>
@@ -195,14 +197,18 @@ const Services = () => {
                   </ul>
 
                   <Button variant="default" size="lg" asChild>
-                    <Link to="/contact">
+                    <Link href="/contact">
                       Request Quote
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Link>
                   </Button>
                 </div>
 
-                <div className={`bg-section-alt rounded-xl p-8 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+                <div
+                  className={`bg-section-alt rounded-xl p-8 ${
+                    index % 2 === 1 ? "lg:order-1" : ""
+                  }`}
+                >
                   <h3 className="text-lg font-heading font-bold text-foreground mb-6">
                     Our Process
                   </h3>
@@ -238,7 +244,7 @@ const Services = () => {
                 help bring your construction vision to life.
               </p>
               <Button variant="hero" size="xl" asChild>
-                <Link to="/contact">
+                <Link href="/contact">
                   Get Your Free Quote
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
@@ -251,6 +257,4 @@ const Services = () => {
       <WhatsAppWidget />
     </div>
   );
-};
-
-export default Services;
+}

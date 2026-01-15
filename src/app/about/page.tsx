@@ -1,16 +1,18 @@
+"use client";
+
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 import { motion } from "framer-motion";
-import { 
-  Users, 
-  Target, 
-  Eye, 
-  Award, 
-  ShieldCheck, 
+import {
+  Users,
+  Target,
+  Eye,
+  Award,
+  ShieldCheck,
   HardHat,
   Calendar,
-  Building2
+  Building2,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
 
@@ -45,7 +47,7 @@ const milestones = [
   { year: "2024", event: "Industry Recognition", description: "Recognized for excellence in construction" },
 ];
 
-const About = () => {
+export default function AboutPage() {
   return (
     <div className="min-h-screen">
       <Header />
@@ -111,7 +113,7 @@ const About = () => {
               >
                 <div className="bg-section-alt rounded-2xl p-8 flex items-center justify-center">
                   <img
-                    src={logo}
+                    src={logo.src}
                     alt="K.S FUBU Building Construction Logo"
                     className="max-w-xs"
                   />
@@ -198,21 +200,85 @@ const About = () => {
                   transition={{ delay: index * 0.1 }}
                   className="bg-section-alt rounded-xl p-6 text-center border border-border hover:border-primary/30 transition-colors"
                 >
-                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
                     <value.icon className="w-7 h-7 text-primary" />
                   </div>
                   <h3 className="text-lg font-heading font-bold text-foreground mb-2">
                     {value.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground">{value.description}</p>
+                  <p className="text-muted-foreground text-sm">
+                    {value.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Timeline */}
+        {/* Why Choose Us */}
         <section className="section-padding bg-section-alt">
+          <div className="container-wide">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+                Why Choose Us
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground">
+                Experience the Difference
+              </h2>
+            </motion.div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  icon: ShieldCheck,
+                  title: "Licensed & Insured",
+                  description: "Fully compliant with all regulations and insurance requirements.",
+                },
+                {
+                  icon: Users,
+                  title: "Expert Team",
+                  description: "Skilled professionals with years of construction experience.",
+                },
+                {
+                  icon: Calendar,
+                  title: "On-Time Delivery",
+                  description: "We complete projects on schedule without compromising quality.",
+                },
+                {
+                  icon: Building2,
+                  title: "Quality Guaranteed",
+                  description: "We stand behind our work with comprehensive warranties.",
+                },
+              ].map((feature, index) => (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-card rounded-xl p-6 border border-border"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <feature.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-heading font-bold text-foreground mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
+                    {feature.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Milestones */}
+        <section className="section-padding bg-background">
           <div className="container-wide">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -227,67 +293,32 @@ const About = () => {
                 Milestones & Achievements
               </h2>
             </motion.div>
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-border md:-translate-x-1/2" />
-              
-              <div className="space-y-8">
-                {milestones.map((milestone, index) => (
-                  <motion.div
-                    key={milestone.year}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className={`relative flex items-center gap-8 ${
-                      index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                    }`}
-                  >
-                    {/* Timeline dot */}
-                    <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-primary md:-translate-x-1/2" />
-                    
-                    <div className={`flex-1 ml-12 md:ml-0 ${index % 2 === 0 ? "md:text-right md:pr-12" : "md:pl-12"}`}>
-                      <div className="bg-card rounded-xl p-6 border border-border inline-block text-left">
-                        <span className="text-2xl font-heading font-bold text-primary">{milestone.year}</span>
-                        <h3 className="text-lg font-heading font-bold text-foreground mt-2">
-                          {milestone.event}
-                        </h3>
-                        <p className="text-sm text-muted-foreground mt-1">{milestone.description}</p>
-                      </div>
-                    </div>
-                    <div className="hidden md:block flex-1" />
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Stats */}
-        <section className="py-16 bg-secondary">
-          <div className="container-wide px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                { icon: Calendar, value: "5+", label: "Years Experience" },
-                { icon: Building2, value: "150+", label: "Projects Completed" },
-                { icon: Users, value: "200+", label: "Happy Clients" },
-                { icon: Award, value: "100%", label: "Satisfaction Rate" },
-              ].map((stat, index) => (
+            <div className="max-w-4xl mx-auto">
+              {milestones.map((milestone, index) => (
                 <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  key={milestone.year}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="text-center"
+                  className="flex gap-6 pb-8 last:pb-0"
                 >
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/20 mb-4">
-                    <stat.icon className="w-7 h-7 text-primary" />
+                  <div className="flex flex-col items-center">
+                    <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
+                      {milestone.year}
+                    </div>
+                    {index < milestones.length - 1 && (
+                      <div className="w-0.5 h-full bg-border mt-4" />
+                    )}
                   </div>
-                  <div className="text-3xl sm:text-4xl font-heading font-bold text-white mb-1">
-                    {stat.value}
+                  <div className="pt-2">
+                    <h3 className="text-xl font-heading font-bold text-foreground mb-2">
+                      {milestone.event}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {milestone.description}
+                    </p>
                   </div>
-                  <div className="text-sm text-white/70">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -298,6 +329,4 @@ const About = () => {
       <WhatsAppWidget />
     </div>
   );
-};
-
-export default About;
+}
