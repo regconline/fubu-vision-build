@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { Phone, Mail, MapPin, Facebook, Instagram, ArrowUp } from "lucide-react";
 import logo from "@/assets/logo.png";
 
@@ -33,7 +35,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-6">
             <img
-              src={logo}
+              src={logo.src}
               alt="K.S FUBU Building Construction"
               className="h-20 bg-globe-gray rounded-lg p-2"
             />
@@ -70,7 +72,7 @@ export function Footer() {
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
-                    to={link.href}
+                    href={link.href}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.name}
@@ -87,7 +89,7 @@ export function Footer() {
               {services.map((service) => (
                 <li key={service.name}>
                   <Link
-                    to={service.href}
+                    href={service.href}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     {service.name}
@@ -147,13 +149,13 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-6 text-sm">
             <Link
-              to="/privacy"
+              href="/privacy"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
-              to="/terms"
+              href="/terms"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               Terms & Conditions

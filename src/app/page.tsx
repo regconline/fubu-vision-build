@@ -1,3 +1,5 @@
+"use client";
+
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
@@ -8,7 +10,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { CTA } from "@/components/sections/CTA";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 
-const Index = () => {
+export default function HomePage() {
   return (
     <div className="min-h-screen">
       <Header />
@@ -24,6 +26,4 @@ const Index = () => {
       <WhatsAppWidget />
     </div>
   );
-};
-
-export default Index;
+}

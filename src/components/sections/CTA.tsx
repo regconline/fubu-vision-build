@@ -1,5 +1,7 @@
+"use client";
+
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
 
@@ -33,7 +35,7 @@ export function CTA() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="xl" asChild>
-              <Link to="/contact">
+              <Link href="/contact">
                 Request Free Consultation
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>

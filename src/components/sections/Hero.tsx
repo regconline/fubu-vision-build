@@ -1,5 +1,7 @@
+"use client";
+
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Shield, Phone, Award } from "lucide-react";
 import heroImage from "@/assets/hero-construction.jpg";
@@ -10,7 +12,7 @@ export function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroImage}
+          src={heroImage.src}
           alt="Modern construction site at sunset"
           className="w-full h-full object-cover"
         />
@@ -64,10 +66,10 @@ export function Hero() {
             className="flex flex-col sm:flex-row gap-4 mb-10"
           >
             <Button variant="hero" size="xl" asChild>
-              <Link to="/contact">Request Free Quote</Link>
+              <Link href="/contact">Request Free Quote</Link>
             </Button>
             <Button variant="hero-outline" size="xl" className="border-white text-white hover:bg-white hover:text-deep-charcoal" asChild>
-              <Link to="/portfolio">View Our Portfolio</Link>
+              <Link href="/portfolio">View Our Portfolio</Link>
             </Button>
           </motion.div>
 

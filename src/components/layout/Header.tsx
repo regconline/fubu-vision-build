@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Mail, MessageCircle, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -69,9 +71,9 @@ export function Header() {
       >
         <div className="container-wide flex items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <motion.img
-              src={logo}
+              src={logo.src}
               alt="K.S FUBU Building Construction"
               className={`transition-all duration-300 ${
                 isScrolled ? "h-14" : "h-20"
@@ -93,7 +95,7 @@ export function Header() {
             {navItems.map((item) => (
               <Link
                 key={item.name}
-                to={item.href}
+                href={item.href}
                 className="px-4 py-2 text-sm font-medium text-deep-charcoal hover:text-primary transition-colors relative group"
               >
                 {item.name}
@@ -105,7 +107,7 @@ export function Header() {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Button variant="hero" size="lg" asChild>
-              <Link to="/contact">Request Free Quote</Link>
+              <Link href="/contact">Request Free Quote</Link>
             </Button>
           </div>
 
@@ -146,7 +148,7 @@ export function Header() {
                   transition={{ delay: index * 0.05 }}
                 >
                   <Link
-                    to={item.href}
+                    href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="block py-3 px-4 text-lg font-medium text-foreground hover:text-primary hover:bg-muted rounded-lg transition-colors"
                   >
@@ -156,7 +158,7 @@ export function Header() {
               ))}
               <div className="mt-6 space-y-3">
                 <Button variant="hero" className="w-full" size="lg" asChild>
-                  <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                     Request Free Quote
                   </Link>
                 </Button>
