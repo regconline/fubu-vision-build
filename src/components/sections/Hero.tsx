@@ -25,7 +25,7 @@ export function Hero() {
         <AnimatePresence mode="sync">
           <motion.img
             key={index}
-            src={heroImages[index].src}
+            src={heroImages[index]}
             alt="K.S FUBU Building Construction project showcase"
             className="absolute inset-0 w-full h-full object-cover"
             initial={{ opacity: 0, scale: 1.05 }}
@@ -84,10 +84,10 @@ export function Hero() {
             className="flex flex-col sm:flex-row gap-4 mb-10"
           >
             <Button variant="hero" size="xl" asChild>
-              <Link href="/contact">Request Free Quote</Link>
+              <Link to="/contact">Request Free Quote</Link>
             </Button>
             <Button variant="hero-outline" size="xl" className="border-white text-white hover:bg-white hover:text-deep-charcoal" asChild>
-              <Link href="/portfolio">View Our Portfolio</Link>
+              <Link to="/portfolio">View Our Portfolio</Link>
             </Button>
           </motion.div>
 

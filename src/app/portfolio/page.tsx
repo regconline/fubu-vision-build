@@ -24,8 +24,8 @@ const projects = [
     size: "3,200 m²",
     description: "Premium A-grade commercial office development featuring a striking steel pergola facade, full-height glazing, and landscaped pedestrian access. Our team delivered structural construction, interior boardroom fit-outs, and external civil works across the precinct.",
     services: ["Building Construction", "Civil Works", "Interior Fit-out"],
-    image: office1.src,
-    images: [office1.src, office2.src, office3.src, boardroom1.src, boardroom2.src],
+    image: office1,
+    images: [office1, office2, office3, boardroom1, boardroom2],
   },
   {
     id: 2,
@@ -36,8 +36,8 @@ const projects = [
     size: "180 m²",
     description: "Bespoke executive boardroom and meeting suite fit-outs featuring custom feature ceilings, glass partitioning, premium carpeting, and integrated AV. Designed for corporate tenants requiring a refined, productive workspace.",
     services: ["Interior Renovations", "Electrical Works", "Finishings"],
-    image: boardroom1.src,
-    images: [boardroom1.src, boardroom2.src, office2.src],
+    image: boardroom1,
+    images: [boardroom1, boardroom2, office2],
   },
   {
     id: 3,
@@ -48,8 +48,8 @@ const projects = [
     size: "2,500 m²",
     description: "Heavy structural steel and civil works for a multi-storey commercial building, including foundation excavation, steelwork erection, and curtain-wall preparation. Delivered on programme with full SHEQ compliance.",
     services: ["Civil Engineering", "Trench Excavation", "Structural Works"],
-    image: officeConstruction.src,
-    images: [officeConstruction.src, office1.src, office3.src],
+    image: officeConstruction,
+    images: [officeConstruction, office1, office3],
   },
   {
     id: 4,

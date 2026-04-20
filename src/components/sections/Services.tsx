@@ -82,7 +82,7 @@ export function Services() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Link
-                href={service.href}
+                to={service.href}
                 className="group block h-full bg-card rounded-xl p-8 shadow-brand-sm hover:shadow-brand-lg transition-all duration-300 hover:-translate-y-2 border border-border hover:border-primary/30"
               >
                 <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
@@ -112,7 +112,7 @@ export function Services() {
           className="text-center mt-12"
         >
           <Button variant="secondary" size="lg" asChild>
-            <Link href="/services">
+            <Link to="/services">
               View All Services
               <ArrowRight className="w-4 h-4 ml-2" />
             </Link>

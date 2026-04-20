@@ -31,7 +31,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-6">
             <img
-              src={logo.src}
+              src={logo}
               alt="K.S FUBU Building Construction"
               className="h-20 bg-globe-gray rounded-lg p-2"
             />
@@ -68,7 +68,7 @@ export function Footer() {
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
-                    href={link.href}
+                    to={link.href}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.name}
@@ -85,7 +85,7 @@ export function Footer() {
               {services.map((service) => (
                 <li key={service.name}>
                   <Link
-                    href={service.href}
+                    to={service.href}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     {service.name}
@@ -147,13 +147,13 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-6 text-sm">
             <Link
-              href="/privacy"
+              to="/privacy"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
-              href="/terms"
+              to="/terms"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               Terms & Conditions
