@@ -7,15 +7,57 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 import { Button } from "@/components/ui/button";
 import { MapPin, Calendar, Ruler, ArrowRight, X } from "lucide-react";
+import office1 from "@/assets/office-exterior-1.jpg";
+import office2 from "@/assets/office-exterior-2.jpg";
+import office3 from "@/assets/office-exterior-3.jpg";
+import officeConstruction from "@/assets/office-construction.jpg";
+import boardroom1 from "@/assets/office-boardroom-1.jpg";
+import boardroom2 from "@/assets/office-boardroom-2.jpg";
 
-const categories = ["All", "Residential", "Commercial", "Renovations", "Architectural"];
+const categories = ["All", "Commercial", "Residential", "Renovations", "Civil & Telecoms", "Architectural"];
 
 const projects = [
   {
     id: 1,
+    title: "Woodmead North Office Park — Block B",
+    category: "Commercial",
+    location: "Maxwell Drive, Waterval City, Midrand",
+    year: "2024",
+    size: "3,200 m²",
+    description: "Premium A-grade commercial office development featuring a striking steel pergola facade, full-height glazing, and landscaped pedestrian access. Our team delivered structural construction, interior boardroom fit-outs, and external civil works across the precinct.",
+    services: ["Building Construction", "Civil Works", "Interior Fit-out"],
+    image: office1.src,
+    images: [office1.src, office2.src, office3.src, boardroom1.src, boardroom2.src],
+  },
+  {
+    id: 2,
+    title: "Executive Boardroom Fit-Out",
+    category: "Commercial",
+    location: "Woodmead North, Midrand",
+    year: "2024",
+    size: "180 m²",
+    description: "Bespoke executive boardroom and meeting suite fit-outs featuring custom feature ceilings, glass partitioning, premium carpeting, and integrated AV. Designed for corporate tenants requiring a refined, productive workspace.",
+    services: ["Interior Renovations", "Electrical Works", "Finishings"],
+    image: boardroom1.src,
+    images: [boardroom1.src, boardroom2.src, office2.src],
+  },
+  {
+    id: 3,
+    title: "Steel-Frame Commercial Build",
+    category: "Civil & Telecoms",
+    location: "Midrand, Gauteng",
+    year: "2023",
+    size: "2,500 m²",
+    description: "Heavy structural steel and civil works for a multi-storey commercial building, including foundation excavation, steelwork erection, and curtain-wall preparation. Delivered on programme with full SHEQ compliance.",
+    services: ["Civil Engineering", "Trench Excavation", "Structural Works"],
+    image: officeConstruction.src,
+    images: [officeConstruction.src, office1.src, office3.src],
+  },
+  {
+    id: 4,
     title: "Modern Family Residence",
     category: "Residential",
-    location: "Kempton Park, Gauteng",
+    location: "Midrand, Gauteng",
     year: "2024",
     size: "450 m²",
     description: "A stunning contemporary 4-bedroom home featuring open-plan living, floor-to-ceiling windows, and a seamless indoor-outdoor flow. The design maximizes natural light while maintaining privacy.",
@@ -28,7 +70,7 @@ const projects = [
     ],
   },
   {
-    id: 2,
+    id: 5,
     title: "Executive Office Complex",
     category: "Commercial",
     location: "Sandton, Johannesburg",
@@ -44,7 +86,7 @@ const projects = [
     ],
   },
   {
-    id: 3,
+    id: 6,
     title: "Heritage Home Restoration",
     category: "Renovations",
     location: "Pretoria East",
@@ -60,7 +102,7 @@ const projects = [
     ],
   },
   {
-    id: 4,
+    id: 7,
     title: "Luxury Villa Blueprint",
     category: "Architectural",
     location: "Midrand, Gauteng",
@@ -76,7 +118,7 @@ const projects = [
     ],
   },
   {
-    id: 5,
+    id: 8,
     title: "Retail Shopping Center",
     category: "Commercial",
     location: "Boksburg, Ekurhuleni",
@@ -92,7 +134,7 @@ const projects = [
     ],
   },
   {
-    id: 6,
+    id: 10,
     title: "Contemporary Townhouse Complex",
     category: "Residential",
     location: "Centurion, Gauteng",
@@ -108,7 +150,7 @@ const projects = [
     ],
   },
   {
-    id: 7,
+    id: 11,
     title: "Kitchen & Living Transformation",
     category: "Renovations",
     location: "Edenvale, Gauteng",
@@ -124,10 +166,10 @@ const projects = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     title: "Industrial Warehouse Facility",
     category: "Commercial",
-    location: "Isando, Kempton Park",
+    location: "Isando, Ekurhuleni",
     year: "2022",
     size: "4,500 m²",
     description: "Large-scale industrial facility with office component, loading bays, and specialized ventilation systems. Built to accommodate heavy machinery and high-volume logistics operations.",

@@ -18,33 +18,33 @@ import logo from "@/assets/logo.png";
 
 const values = [
   {
-    icon: ShieldCheck,
-    title: "Integrity",
-    description: "We operate with honesty and transparency in all our dealings.",
+    icon: HardHat,
+    title: "Quality Workmanship",
+    description: "Delivering durable, high-standard construction on every project.",
   },
   {
-    icon: HardHat,
-    title: "Excellence",
-    description: "We strive for excellence in every project, big or small.",
+    icon: ShieldCheck,
+    title: "Safety & SHEQ Compliance",
+    description: "Strict adherence to safety, health, environmental and quality standards.",
   },
   {
     icon: Users,
-    title: "Collaboration",
-    description: "We work closely with clients to bring their visions to life.",
+    title: "Integrity & Transparency",
+    description: "Honest communication and clear reporting from start to finish.",
   },
   {
     icon: Award,
-    title: "Quality",
-    description: "We never compromise on the quality of our work and materials.",
+    title: "Professional Excellence",
+    description: "Skilled teams committed to client satisfaction on every site.",
   },
 ];
 
 const milestones = [
-  { year: "2020", event: "Company Founded", description: "K.S FUBU Building Construction established in Kempton Park" },
-  { year: "2021", event: "First Major Project", description: "Completed our first commercial building renovation" },
-  { year: "2022", event: "Team Expansion", description: "Grew our team of skilled professionals" },
-  { year: "2023", event: "100+ Projects", description: "Reached milestone of 100 completed projects" },
-  { year: "2024", event: "Industry Recognition", description: "Recognized for excellence in construction" },
+  { year: "2020", event: "Company Founded", description: "K.S FUBU Building Construction (Pty) Ltd established by Katlego Maja" },
+  { year: "2021", event: "First Major Project", description: "Completed our first commercial building and civil works contract" },
+  { year: "2022", event: "Telecoms Division", description: "Expanded into telecommunications tower construction & maintenance" },
+  { year: "2023", event: "Infrastructure Growth", description: "Delivered multiple trench excavation and civil engineering projects" },
+  { year: "2024", event: "National Reach", description: "Serving clients across South Africa with infrastructure development" },
 ];
 
 export default function AboutPage() {
@@ -67,9 +67,10 @@ export default function AboutPage() {
                 Building Excellence Since <span className="text-primary">2020</span>
               </h1>
               <p className="text-lg text-white/80 leading-relaxed">
-                K.S FUBU Building Construction (Pty) Ltd is a proudly South African construction
-                company dedicated to delivering exceptional building solutions for residential and
-                commercial clients across Gauteng.
+                K.S FUBU Building Construction (Pty) Ltd is a South African construction and
+                infrastructure development company specialising in civil works, building
+                construction, and telecommunications infrastructure — led by Director & CEO
+                Katlego Maja.
               </p>
             </motion.div>
           </div>
@@ -89,19 +90,21 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Founded in 2020, K.S FUBU Building Construction emerged from a passion for
-                    creating spaces that inspire and endure. Our founder envisioned a construction
-                    company that would prioritize quality, integrity, and client satisfaction above all.
+                    Founded in 2020 by Director & CEO <strong className="text-foreground">Katlego Maja</strong>,
+                    K.S FUBU Building Construction (Pty) Ltd was built on a simple promise: deliver
+                    reliable, safe, and high-quality construction solutions that meet client expectations
+                    while contributing to South Africa's infrastructure growth.
                   </p>
                   <p>
-                    Today, we've grown into a trusted name in the Gauteng construction industry,
-                    known for our comprehensive range of services including architectural works,
-                    building renovations, engineering consultancy, and specialized trades like
-                    plumbing, electrical, and waterproofing.
+                    Our work spans building construction, civil engineering, trench excavation,
+                    telecommunications tower construction & maintenance, renovations, and
+                    infrastructure development — backed by experienced site teams and full SHEQ
+                    compliance.
                   </p>
                   <p>
-                    Based in Kempton Park, we serve clients throughout Gauteng and beyond,
-                    bringing the same dedication to excellence to every project, regardless of size.
+                    Headquartered at Block B, Woodmead North Office Park in Midrand, we serve
+                    clients across South Africa, bringing the same dedication to excellence to every
+                    project, regardless of size or complexity.
                   </p>
                 </div>
               </motion.div>
@@ -144,10 +147,9 @@ export default function AboutPage() {
                   Our Mission
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To deliver exceptional construction services that exceed client expectations,
-                  while maintaining the highest standards of quality, safety, and professionalism.
-                  We are committed to building lasting relationships through transparent communication
-                  and reliable project delivery.
+                  To deliver reliable, safe, and high-quality construction solutions that meet
+                  client expectations while contributing to infrastructure development and
+                  economic growth across South Africa.
                 </p>
               </motion.div>
               <motion.div
@@ -164,10 +166,9 @@ export default function AboutPage() {
                   Our Vision
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To be the leading construction company in Gauteng, recognized for our innovative
-                  solutions, sustainable practices, and unwavering commitment to excellence.
-                  We envision shaping skylines and communities through buildings that stand
-                  the test of time.
+                  To become a leading and trusted construction company in South Africa,
+                  recognised for professionalism, quality workmanship, and safety compliance
+                  across every project we deliver.
                 </p>
               </motion.div>
             </div>

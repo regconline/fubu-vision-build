@@ -41,11 +41,11 @@ export function Header() {
               +27 79 364 0439
             </a>
             <a
-              href="mailto:fubu.buildingcompany@gmail.com"
+              href="mailto:info@ksfubuconstruction.co.za"
               className="flex items-center gap-2 hover:text-primary transition-colors"
             >
               <Mail size={14} />
-              fubu.buildingcompany@gmail.com
+              info@ksfubuconstruction.co.za
             </a>
           </div>
           <a

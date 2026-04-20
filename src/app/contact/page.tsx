@@ -151,7 +151,7 @@ const Contact = () => {
                   </a>
 
                   <a
-                    href="mailto:fubu.buildingcompany@gmail.com"
+                    href="mailto:info@ksfubuconstruction.co.za"
                     className="flex items-start gap-4 group"
                   >
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors">
@@ -160,7 +160,7 @@ const Contact = () => {
                     <div>
                       <p className="font-medium text-foreground">Email</p>
                       <p className="text-muted-foreground group-hover:text-primary transition-colors">
-                        fubu.buildingcompany@gmail.com
+                        info@ksfubuconstruction.co.za
                       </p>
                     </div>
                   </a>
@@ -172,8 +172,9 @@ const Contact = () => {
                     <div>
                       <p className="font-medium text-foreground">Address</p>
                       <p className="text-muted-foreground">
-                        15 Boekenhout Street, Birchleigh,<br />
-                        Kempton Park, 1618, Gauteng
+                        Block B, Woodmead North Office Park,<br />
+                        Maxwell Drive, Waterval City,<br />
+                        Midrand, 2090
                       </p>
                     </div>
                   </div>
@@ -365,14 +366,14 @@ const Contact = () => {
         {/* Map Section */}
         <section className="h-96 relative">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.5!2d28.2364!3d-26.0567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDAzJzI0LjEiUyAyOMKwMTQnMTEuMCJF!5e0!3m2!1sen!2sza!4v1234567890"
+            src="https://www.google.com/maps?q=Woodmead+North+Office+Park,+Maxwell+Drive,+Waterval+City,+Midrand&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="K.S FUBU Building Construction Location"
+            title="K.S FUBU Building Construction — Woodmead North Office Park, Midrand"
           />
         </section>
       </main>
