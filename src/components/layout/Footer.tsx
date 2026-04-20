@@ -1,6 +1,4 @@
-"use client";
-
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Instagram, ArrowUp } from "lucide-react";
 import logo from "@/assets/logo.png";
 
