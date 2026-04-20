@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Logo-derived colors */
+    --helmet-yellow: 48 100% 50%;
+    --helmet-yellow-hover: 43 96% 56%;
+    --deep-charcoal: 222 56% 11%;
+    --graphite-black: 220 26% 14%;
+    --globe-gray: 220 14% 90%;
+    
+    /* Industry complementary */
+    --trust-navy: 218 55% 23%;
+    --trust-navy-light: 218 55% 30%;
+    --warm-amber: 38 92% 50%;
+    
+    /* Semantic tokens */
+    --background: 0 0% 100%;
+    --foreground: 222 56% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 56% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 56% 11%;
+
+    --primary: 48 100% 50%;
+    --primary-foreground: 222 56% 11%;
+
+    --secondary: 218 55% 23%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 56% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 48 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* Header background matching logo globe */
+    --header-bg: 220 14% 90%;
+    
+    /* Section backgrounds */
+    --section-alt: 220 14% 96%;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(222 56% 11% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(222 56% 11% / 0.1), 0 2px 4px -2px hsl(222 56% 11% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(222 56% 11% / 0.1), 0 4px 6px -4px hsl(222 56% 11% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(222 56% 11% / 0.1), 0 8px 10px -6px hsl(222 56% 11% / 0.1);
+    
+    /* Sidebar vars (keeping defaults) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222 56% 11%;
+    --foreground: 220 14% 96%;
+
+    --card: 220 26% 14%;
+    --card-foreground: 220 14% 96%;
+
+    --popover: 220 26% 14%;
+    --popover-foreground: 220 14% 96%;
+
+    --primary: 48 100% 50%;
+    --primary-foreground: 222 56% 11%;
+
+    --secondary: 218 55% 30%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 26% 20%;
+    --muted-foreground: 220 9% 65%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 56% 11%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 26% 20%;
+    --input: 220 26% 20%;
+    --ring: 48 100% 50%;
+    
+    --header-bg: 220 26% 14%;
+    --section-alt: 220 26% 12%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24;
+  }
+  
+  .container-wide {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-md bg-background/80;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out forwards;
+  }
+  
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
