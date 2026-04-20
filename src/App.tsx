@@ -12,6 +12,8 @@ import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import { ScrollToTopButton } from "@/components/ui/ScrollToTopButton";
+import { ScrollProgressBar } from "@/components/ui/ScrollProgressBar";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +32,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <ScrollProgressBar />
+        <ScrollToTopButton />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

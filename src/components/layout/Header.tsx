@@ -113,11 +113,11 @@ export function Header() {
               className={`transition-all duration-300 ${isScrolled ? "h-14" : "h-20"}`}
               whileHover={{ scale: 1.02 }}
             />
-            <div className={`hidden sm:flex flex-col transition-all duration-300 ${isScrolled ? "gap-0" : "gap-0.5"}`}>
-              <span className={`font-heading font-bold text-deep-charcoal tracking-tight leading-none transition-all duration-300 ${isScrolled ? "text-lg" : "text-xl lg:text-2xl"}`}>
+            <div className={`flex flex-col transition-all duration-300 ${isScrolled ? "gap-0" : "gap-0.5"}`}>
+              <span className={`font-heading font-bold text-deep-charcoal tracking-tight leading-none transition-all duration-300 ${isScrolled ? "text-sm lg:text-lg" : "text-base lg:text-xl xl:text-2xl"}`}>
                 K.S FUBU
               </span>
-              <span className={`font-medium text-trust-navy tracking-wide uppercase transition-all duration-300 ${isScrolled ? "text-[10px]" : "text-xs"}`}>
+              <span className={`font-medium text-trust-navy tracking-wide uppercase transition-all duration-300 ${isScrolled ? "text-[8px] lg:text-[10px]" : "text-[9px] lg:text-xs"}`}>
                 Building Construction
               </span>
             </div>
