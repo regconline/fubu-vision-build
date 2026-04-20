@@ -9,9 +9,7 @@ const quickLinks = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
-  { name: "Case Studies", href: "/case-studies" },
-  { name: "Blog", href: "/blog" },
-  { name: "Careers", href: "/careers" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const services = [
@@ -114,19 +112,21 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:fubu.buildingcompany@gmail.com"
+                  href="mailto:info@ksfubuconstruction.co.za"
                   className="flex items-start gap-3 text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Mail size={18} className="mt-1 shrink-0" />
-                  <span>fubu.buildingcompany@gmail.com</span>
+                  <span>info@ksfubuconstruction.co.za</span>
                 </a>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
                 <MapPin size={18} className="mt-1 shrink-0" />
                 <span>
-                  15 Boekenhout Street, Birchleigh,
+                  Block B, Woodmead North Office Park,
                   <br />
-                  Kempton Park, 1618, Gauteng
+                  Maxwell Drive, Waterval City,
+                  <br />
+                  Midrand, 2090
                 </span>
               </li>
             </ul>
