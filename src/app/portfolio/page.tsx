@@ -70,7 +70,7 @@ const projects = [
     ],
   },
   {
-    id: 2,
+    id: 5,
     title: "Executive Office Complex",
     category: "Commercial",
     location: "Sandton, Johannesburg",
@@ -86,7 +86,7 @@ const projects = [
     ],
   },
   {
-    id: 3,
+    id: 6,
     title: "Heritage Home Restoration",
     category: "Renovations",
     location: "Pretoria East",
@@ -102,7 +102,7 @@ const projects = [
     ],
   },
   {
-    id: 4,
+    id: 7,
     title: "Luxury Villa Blueprint",
     category: "Architectural",
     location: "Midrand, Gauteng",
@@ -118,7 +118,7 @@ const projects = [
     ],
   },
   {
-    id: 5,
+    id: 8,
     title: "Retail Shopping Center",
     category: "Commercial",
     location: "Boksburg, Ekurhuleni",
@@ -134,7 +134,7 @@ const projects = [
     ],
   },
   {
-    id: 6,
+    id: 10,
     title: "Contemporary Townhouse Complex",
     category: "Residential",
     location: "Centurion, Gauteng",
@@ -150,7 +150,7 @@ const projects = [
     ],
   },
   {
-    id: 7,
+    id: 11,
     title: "Kitchen & Living Transformation",
     category: "Renovations",
     location: "Edenvale, Gauteng",
