@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Clock, Send, Upload, CheckCircle2 } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -63,18 +63,8 @@ export default function Contact() {
   const [duration, setDuration] = useState("");
   const [siteStatus, setSiteStatus] = useState("");
   const [contactMethod, setContactMethod] = useState("WhatsApp");
-  const [fileName, setFileName] = useState<string>("");
 
-  const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const f = e.target.files?.[0];
-    if (!f) return;
-    if (f.size > 10 * 1024 * 1024) {
-      toast({ title: "File too large", description: "Please upload a file under 10 MB.", variant: "destructive" });
-      e.target.value = "";
-      return;
-    }
-    setFileName(f.name);
-  };
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -92,8 +82,7 @@ export default function Contact() {
         `*Budget Range:* ${budget}\n` +
         `*Preferred Start:* ${startDate || "Flexible"}\n` +
         `*Expected Duration:* ${duration || "TBD"}\n` +
-        (fileName ? `*Plans/Drawings:* ${fileName} (will share after first reply)\n\n` : `\n`) +
-        `*Description:*\n${description}`
+        `\n*Description:*\n${description}`
     );
 
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank", "noopener,noreferrer");
@@ -281,19 +270,6 @@ export default function Contact() {
                   {/* Additional */}
                   <div className="space-y-5">
                     <h4 className="text-sm font-semibold uppercase tracking-wider text-primary">Additional Information</h4>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="plans">Upload Plans / Drawings (optional)</Label>
-                      <label htmlFor="plans" className="flex items-center gap-3 px-4 py-3 bg-background border border-dashed border-border rounded-lg cursor-pointer hover:border-primary transition-colors">
-                        <Upload className="w-5 h-5 text-primary shrink-0" />
-                        <span className="text-sm text-muted-foreground truncate">
-                          {fileName || "PDF, JPG, PNG or DWG (max 10 MB)"}
-                        </span>
-                        {fileName && <CheckCircle2 className="w-4 h-4 text-primary ml-auto shrink-0" />}
-                      </label>
-                      <input id="plans" type="file" accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf" className="hidden" onChange={handleFile} />
-                      <p className="text-xs text-muted-foreground">Note: file is referenced by name in your enquiry — please send it via WhatsApp/email after submitting.</p>
-                    </div>
 
                     <div className="space-y-3">
                       <Label>Preferred Contact Method *</Label>

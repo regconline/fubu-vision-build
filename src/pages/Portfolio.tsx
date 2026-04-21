@@ -8,14 +8,24 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import residentialModern1 from "@/assets/portfolio/residential-modern-1.jpg";
+import residentialModern2 from "@/assets/portfolio/residential-modern-2.jpg";
 import residentialLuxury1 from "@/assets/portfolio/residential-luxury-1.jpg";
+import residentialLuxury2 from "@/assets/portfolio/residential-luxury-2.jpg";
 import residentialDouble1 from "@/assets/portfolio/residential-double-storey-1.jpg";
+import residentialDouble2 from "@/assets/portfolio/residential-double-storey-2.jpg";
 import structural1 from "@/assets/portfolio/structural-1.jpg";
 import structural2 from "@/assets/portfolio/structural-2.jpg";
 import structural3 from "@/assets/portfolio/structural-3.jpg";
+import structural4 from "@/assets/portfolio/structural-4.jpg";
+import structural5 from "@/assets/portfolio/structural-5.jpg";
 import civilPlumbing1 from "@/assets/portfolio/civil-plumbing-1.jpg";
 import commercial1 from "@/assets/portfolio/commercial-1.jpg";
 import commercialRender1 from "@/assets/portfolio/commercial-render-1.jpg";
+import architecturePlans1 from "@/assets/portfolio/architecture-plans-1.jpg";
+import interiorKitchen1 from "@/assets/portfolio/interior-kitchen-1.jpg";
+import interiorKitchen2 from "@/assets/portfolio/interior-kitchen-2.jpg";
+import interiorBathroom1 from "@/assets/portfolio/interior-bathroom-1.jpg";
+import interiorHallway1 from "@/assets/portfolio/interior-hallway-1.jpg";
 
 type Category =
   | "All"
@@ -23,7 +33,8 @@ type Category =
   | "Commercial Construction"
   | "Structural Works"
   | "Civil Engineering"
-  | "Architecture & Design";
+  | "Architecture & Design"
+  | "Interior & Finishes";
 
 interface Project {
   src: string;
@@ -33,14 +44,24 @@ interface Project {
 
 const projects: Project[] = [
   { src: residentialModern1, title: "Modern Double Storey Residence", category: "Residential Construction" },
+  { src: residentialModern2, title: "Contemporary Concrete Residence", category: "Residential Construction" },
   { src: residentialLuxury1, title: "Luxury Family Home", category: "Residential Construction" },
+  { src: residentialLuxury2, title: "Luxury Pillared Mansion Build", category: "Residential Construction" },
   { src: residentialDouble1, title: "Double Storey Brickwork Build", category: "Residential Construction" },
+  { src: residentialDouble2, title: "Completed Double Storey Home", category: "Residential Construction" },
   { src: structural1, title: "Reinforced Slab & Roof Trusses", category: "Structural Works" },
   { src: structural2, title: "Structural Columns & Beams", category: "Structural Works" },
   { src: structural3, title: "Suspended Slab Construction", category: "Structural Works" },
+  { src: structural4, title: "Brickwork & Scaffolding Stage", category: "Structural Works" },
+  { src: structural5, title: "Steel Door Frame Installation", category: "Structural Works" },
   { src: civilPlumbing1, title: "Slab Plumbing & Reinforcement", category: "Civil Engineering" },
   { src: commercial1, title: "Commercial Block Development", category: "Commercial Construction" },
   { src: commercialRender1, title: "Commercial Building Design", category: "Architecture & Design" },
+  { src: architecturePlans1, title: "Architectural Plans & Elevations", category: "Architecture & Design" },
+  { src: interiorKitchen1, title: "Modern Kitchen Installation", category: "Interior & Finishes" },
+  { src: interiorKitchen2, title: "Compact Kitchen Fit-Out", category: "Interior & Finishes" },
+  { src: interiorBathroom1, title: "Tiled Bathroom & Vanity", category: "Interior & Finishes" },
+  { src: interiorHallway1, title: "Interior Hallway & Built-In Cupboards", category: "Interior & Finishes" },
 ];
 
 const categories: Category[] = [
@@ -50,6 +71,7 @@ const categories: Category[] = [
   "Structural Works",
   "Civil Engineering",
   "Architecture & Design",
+  "Interior & Finishes",
 ];
 
 export default function Portfolio() {
@@ -130,7 +152,7 @@ export default function Portfolio() {
                       src={p.src}
                       alt={p.title}
                       loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110 group-focus-within:grayscale-0 group-focus-within:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal/90 via-deep-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
