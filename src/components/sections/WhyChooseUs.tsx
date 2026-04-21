@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {
   ClipboardCheck,
   Shield,
@@ -17,14 +17,14 @@ const features = [
   { icon: HeartHandshake, title: "Client-Focused", description: "Your vision is our priority. We listen, adapt, and deliver." },
 ];
 
-const container = {
+const container: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.08 } },
 };
 
-const cardVariant = {
+const cardVariant: Variants = {
   hidden: { opacity: 0, y: 24, scale: 0.97 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.45, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] } },
 };
 
 const steps = [
