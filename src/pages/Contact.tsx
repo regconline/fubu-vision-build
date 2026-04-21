@@ -3,11 +3,12 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, Upload, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import {
   Select,
   SelectContent,
@@ -15,9 +16,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
 
-const servicesList = [
-  "General Building Construction",
+const projectTypes = [
+  "Residential Construction",
+  "Commercial Construction",
+  "Renovation & Alterations",
   "Civil Engineering Works",
   "Telecommunications Infrastructure",
   "Structural Works",
@@ -27,28 +31,78 @@ const servicesList = [
   "Window Factory",
   "Kitchen Factory",
   "Transport & Logistics",
+  "Other",
 ];
+
+const budgetRanges = [
+  "Under R100,000",
+  "R100,000 – R500,000",
+  "R500,000 – R1,000,000",
+  "R1,000,000 – R5,000,000",
+  "R5,000,000+",
+  "Not sure yet",
+];
+
+const siteStatuses = ["Vacant Land", "Existing Structure", "Under Construction"];
+const contactMethods = ["Call", "WhatsApp", "Email"];
 
 const WHATSAPP_NUMBER = "27793640439";
 
 export default function Contact() {
+  const { toast } = useToast();
+  const [submitting, setSubmitting] = useState(false);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [service, setService] = useState("");
-  const [message, setMessage] = useState("");
+  const [projectType, setProjectType] = useState("");
+  const [description, setDescription] = useState("");
+  const [location, setLocation] = useState("");
+  const [budget, setBudget] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [duration, setDuration] = useState("");
+  const [siteStatus, setSiteStatus] = useState("");
+  const [contactMethod, setContactMethod] = useState("WhatsApp");
+  const [fileName, setFileName] = useState<string>("");
+
+  const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const f = e.target.files?.[0];
+    if (!f) return;
+    if (f.size > 10 * 1024 * 1024) {
+      toast({ title: "File too large", description: "Please upload a file under 10 MB.", variant: "destructive" });
+      e.target.value = "";
+      return;
+    }
+    setFileName(f.name);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitting(true);
+
     const text = encodeURIComponent(
-      `*New Enquiry from Website*\n\n` +
-      `*Name:* ${name}\n` +
-      `*Phone:* ${phone}\n` +
-      `*Email:* ${email}\n` +
-      `*Service Required:* ${service}\n` +
-      `*Message:* ${message}`
+      `*New Project Enquiry from Website*\n\n` +
+        `*Name:* ${name}\n` +
+        `*Phone:* ${phone}\n` +
+        `*Email:* ${email}\n` +
+        `*Preferred Contact:* ${contactMethod}\n\n` +
+        `*Project Type:* ${projectType}\n` +
+        `*Location:* ${location}\n` +
+        `*Site Status:* ${siteStatus}\n` +
+        `*Budget Range:* ${budget}\n` +
+        `*Preferred Start:* ${startDate || "Flexible"}\n` +
+        `*Expected Duration:* ${duration || "TBD"}\n` +
+        (fileName ? `*Plans/Drawings:* ${fileName} (will share after first reply)\n\n` : `\n`) +
+        `*Description:*\n${description}`
     );
+
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank", "noopener,noreferrer");
+
+    toast({
+      title: "Enquiry sent",
+      description: "WhatsApp opened with your project details — we'll respond shortly.",
+    });
+    setSubmitting(false);
   };
 
   return (
@@ -63,7 +117,7 @@ export default function Contact() {
                 Let's Build <span className="text-primary">Together</span>
               </h1>
               <p className="text-lg text-white/80 leading-relaxed">
-                Ready to start your project? Get in touch with our team for a free consultation and quote.
+                Ready to start your project? Share the details below and we'll come back with a free consultation and quote.
               </p>
             </motion.div>
           </div>
@@ -95,7 +149,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Email</p>
-                      <p className="text-muted-foreground group-hover:text-primary transition-colors">info@ksfubuconstruction.co.za</p>
+                      <p className="text-muted-foreground group-hover:text-primary transition-colors break-all">info@ksfubuconstruction.co.za</p>
                     </div>
                   </a>
 
@@ -142,75 +196,116 @@ export default function Contact() {
               </motion.div>
 
               <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:col-span-2">
-                <form onSubmit={handleSubmit} className="bg-section-alt rounded-xl p-8 space-y-6">
-                  <h3 className="text-xl font-heading font-bold text-foreground">Send Us a Message</h3>
-                  <p className="text-sm text-muted-foreground">This form will open WhatsApp with your details pre-filled — fast and easy.</p>
-
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Full Name *</Label>
-                      <Input
-                        id="name"
-                        required
-                        placeholder="Your full name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        data-testid="input-name"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email Address *</Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        required
-                        placeholder="your@email.com"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        data-testid="input-email"
-                      />
-                    </div>
+                <form onSubmit={handleSubmit} className="bg-section-alt rounded-xl p-6 sm:p-8 space-y-8">
+                  <div>
+                    <h3 className="text-xl font-heading font-bold text-foreground">Project Enquiry</h3>
+                    <p className="text-sm text-muted-foreground mt-1">Tell us about your project — the more detail, the better the quote.</p>
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-6">
+                  {/* Basic Info */}
+                  <div className="space-y-5">
+                    <h4 className="text-sm font-semibold uppercase tracking-wider text-primary">Your Details</h4>
+                    <div className="grid sm:grid-cols-2 gap-5">
+                      <div className="space-y-2">
+                        <Label htmlFor="name">Full Name *</Label>
+                        <Input id="name" required maxLength={100} placeholder="Your full name" value={name} onChange={(e) => setName(e.target.value)} />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="email">Email Address *</Label>
+                        <Input id="email" type="email" required maxLength={255} placeholder="your@email.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+                      </div>
+                    </div>
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone Number *</Label>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        required
-                        placeholder="+27 XX XXX XXXX"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        data-testid="input-phone"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="service">Service Required *</Label>
-                      <Select required onValueChange={setService} value={service}>
-                        <SelectTrigger data-testid="select-service">
-                          <SelectValue placeholder="Select a service" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {servicesList.map((s) => (
-                            <SelectItem key={s} value={s}>{s}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
+                      <Input id="phone" type="tel" required maxLength={20} placeholder="+27 XX XXX XXXX" value={phone} onChange={(e) => setPhone(e.target.value)} />
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message *</Label>
-                    <Textarea
-                      id="message"
-                      required
-                      placeholder="Tell us about your project..."
-                      rows={5}
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      data-testid="textarea-message"
-                    />
+                  {/* Project Details */}
+                  <div className="space-y-5">
+                    <h4 className="text-sm font-semibold uppercase tracking-wider text-primary">Project Details</h4>
+                    <div className="grid sm:grid-cols-2 gap-5">
+                      <div className="space-y-2">
+                        <Label htmlFor="projectType">Project Type *</Label>
+                        <Select required onValueChange={setProjectType} value={projectType}>
+                          <SelectTrigger id="projectType"><SelectValue placeholder="Select project type" /></SelectTrigger>
+                          <SelectContent>
+                            {projectTypes.map((s) => <SelectItem key={s} value={s}>{s}</SelectItem>)}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="location">Project Location *</Label>
+                        <Input id="location" required maxLength={100} placeholder="City / Region" value={location} onChange={(e) => setLocation(e.target.value)} />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="description">Project Description *</Label>
+                      <Textarea id="description" required maxLength={2000} placeholder="Briefly describe your project, scope and any specific requirements..." rows={5} value={description} onChange={(e) => setDescription(e.target.value)} />
+                    </div>
+
+                    <div className="grid sm:grid-cols-2 gap-5">
+                      <div className="space-y-2">
+                        <Label htmlFor="budget">Budget Range *</Label>
+                        <Select required onValueChange={setBudget} value={budget}>
+                          <SelectTrigger id="budget"><SelectValue placeholder="Select a range" /></SelectTrigger>
+                          <SelectContent>
+                            {budgetRanges.map((b) => <SelectItem key={b} value={b}>{b}</SelectItem>)}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="siteStatus">Site Status *</Label>
+                        <Select required onValueChange={setSiteStatus} value={siteStatus}>
+                          <SelectTrigger id="siteStatus"><SelectValue placeholder="Select site status" /></SelectTrigger>
+                          <SelectContent>
+                            {siteStatuses.map((s) => <SelectItem key={s} value={s}>{s}</SelectItem>)}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    </div>
+
+                    <div className="grid sm:grid-cols-2 gap-5">
+                      <div className="space-y-2">
+                        <Label htmlFor="startDate">Preferred Start Date</Label>
+                        <Input id="startDate" type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="duration">Expected Duration</Label>
+                        <Input id="duration" maxLength={50} placeholder="e.g. 6 months" value={duration} onChange={(e) => setDuration(e.target.value)} />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Additional */}
+                  <div className="space-y-5">
+                    <h4 className="text-sm font-semibold uppercase tracking-wider text-primary">Additional Information</h4>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="plans">Upload Plans / Drawings (optional)</Label>
+                      <label htmlFor="plans" className="flex items-center gap-3 px-4 py-3 bg-background border border-dashed border-border rounded-lg cursor-pointer hover:border-primary transition-colors">
+                        <Upload className="w-5 h-5 text-primary shrink-0" />
+                        <span className="text-sm text-muted-foreground truncate">
+                          {fileName || "PDF, JPG, PNG or DWG (max 10 MB)"}
+                        </span>
+                        {fileName && <CheckCircle2 className="w-4 h-4 text-primary ml-auto shrink-0" />}
+                      </label>
+                      <input id="plans" type="file" accept=".pdf,.jpg,.jpeg,.png,.dwg,.dxf" className="hidden" onChange={handleFile} />
+                      <p className="text-xs text-muted-foreground">Note: file is referenced by name in your enquiry — please send it via WhatsApp/email after submitting.</p>
+                    </div>
+
+                    <div className="space-y-3">
+                      <Label>Preferred Contact Method *</Label>
+                      <RadioGroup value={contactMethod} onValueChange={setContactMethod} className="grid grid-cols-3 gap-3">
+                        {contactMethods.map((m) => (
+                          <label key={m} htmlFor={`cm-${m}`} className={`flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg border cursor-pointer transition-colors ${contactMethod === m ? "border-primary bg-primary/10 text-primary" : "border-border bg-background text-foreground hover:border-primary/40"}`}>
+                            <RadioGroupItem id={`cm-${m}`} value={m} className="sr-only" />
+                            <span className="text-sm font-medium">{m}</span>
+                          </label>
+                        ))}
+                      </RadioGroup>
+                    </div>
                   </div>
 
                   <Button
@@ -218,11 +313,10 @@ export default function Contact() {
                     variant="hero"
                     size="lg"
                     className="w-full gap-2"
-                    data-testid="button-submit"
-                    disabled={!name || !email || !phone || !service || !message}
+                    disabled={submitting || !name || !email || !phone || !projectType || !location || !description || !budget || !siteStatus}
                   >
                     <Send className="w-4 h-4" />
-                    Send via WhatsApp
+                    Send Enquiry via WhatsApp
                   </Button>
                 </form>
               </motion.div>
@@ -236,7 +330,7 @@ export default function Contact() {
             <div className="rounded-2xl overflow-hidden border border-border h-96">
               <iframe
                 title="KS FUBU Building Construction Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.5!2d28.1!3d-25.99!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9573b6c6e0b0a1%3A0x1!2sWoodmead+North+Office+Park%2C+Maxwell+Dr%2C+Waterval+City%2C+Midrand%2C+2090!5e0!3m2!1sen!2sza!4v1"
+                src="https://www.google.com/maps?q=Block+B+Woodmead+North+Office+Park+Maxwell+Drive+Waterval+City+Midrand+2090&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
