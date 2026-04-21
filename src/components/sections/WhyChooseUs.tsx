@@ -93,7 +93,7 @@ export function WhyChooseUs() {
               <motion.div
                 key={feature.title}
                 variants={cardVariant}
-                whileHover={{ y: -4, boxShadow: "0 8px 30px rgba(0,0,0,0.08)" }}
+                whileHover={{ y: -4 }}
                 className="bg-section-alt rounded-xl p-6 border border-border hover:border-primary/30 transition-colors group cursor-default"
               >
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary transition-colors duration-300">
