@@ -26,6 +26,15 @@ import interiorKitchen1 from "@/assets/portfolio/interior-kitchen-1.jpg";
 import interiorKitchen2 from "@/assets/portfolio/interior-kitchen-2.jpg";
 import interiorBathroom1 from "@/assets/portfolio/interior-bathroom-1.jpg";
 import interiorHallway1 from "@/assets/portfolio/interior-hallway-1.jpg";
+import commercialMagubane1 from "@/assets/portfolio/commercial-magubane-1.jpg";
+import commercialMagubane2 from "@/assets/portfolio/commercial-magubane-2.jpg";
+import commercialMagubane3 from "@/assets/portfolio/commercial-magubane-3.jpg";
+import commercialMagubane4 from "@/assets/portfolio/commercial-magubane-4.jpg";
+import telecomCabling1 from "@/assets/portfolio/telecom-cabling-1.jpg";
+import telecomRooftop1 from "@/assets/portfolio/telecom-rooftop-1.jpg";
+import telecomTowerInstall1 from "@/assets/portfolio/telecom-tower-install-1.jpg";
+import telecomTeam1 from "@/assets/portfolio/telecom-team-1.jpg";
+import telecomTeam2 from "@/assets/portfolio/telecom-team-2.jpg";
 
 type Category =
   | "All"
@@ -34,7 +43,8 @@ type Category =
   | "Structural Works"
   | "Civil Engineering"
   | "Architecture & Design"
-  | "Interior & Finishes";
+  | "Interior & Finishes"
+  | "Telecommunications";
 
 interface Project {
   src: string;
@@ -62,6 +72,15 @@ const projects: Project[] = [
   { src: interiorKitchen2, title: "Compact Kitchen Fit-Out", category: "Interior & Finishes" },
   { src: interiorBathroom1, title: "Tiled Bathroom & Vanity", category: "Interior & Finishes" },
   { src: interiorHallway1, title: "Interior Hallway & Built-In Cupboards", category: "Interior & Finishes" },
+  { src: commercialMagubane1, title: "Magubane Block A — Street View", category: "Architecture & Design" },
+  { src: commercialMagubane2, title: "Magubane Block A — Aerial Render", category: "Architecture & Design" },
+  { src: commercialMagubane3, title: "Magubane Blocks A & B — Site Layout", category: "Commercial Construction" },
+  { src: commercialMagubane4, title: "Magubane Twin Block Development", category: "Commercial Construction" },
+  { src: telecomCabling1, title: "Fibre & Power Cable Management", category: "Telecommunications" },
+  { src: telecomRooftop1, title: "Rooftop Antenna & Microwave Site", category: "Telecommunications" },
+  { src: telecomTowerInstall1, title: "Tower Climb & Antenna Installation", category: "Telecommunications" },
+  { src: telecomTeam1, title: "On-Site Safety & Site Survey", category: "Telecommunications" },
+  { src: telecomTeam2, title: "KS FUBU Telecom Field Crew", category: "Telecommunications" },
 ];
 
 const categories: Category[] = [
@@ -72,6 +91,7 @@ const categories: Category[] = [
   "Civil Engineering",
   "Architecture & Design",
   "Interior & Finishes",
+  "Telecommunications",
 ];
 
 export default function Portfolio() {
@@ -152,7 +172,10 @@ export default function Portfolio() {
                       src={p.src}
                       alt={p.title}
                       loading="lazy"
-                      className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110 group-focus-within:grayscale-0 group-focus-within:scale-110"
+                      style={{ filter: "sepia(1) saturate(2.2) hue-rotate(5deg) brightness(0.95)" }}
+                      className="w-full h-full object-cover transition-all duration-500 group-hover:!filter-none group-hover:scale-110 group-focus-within:!filter-none group-focus-within:scale-110"
+                      onMouseEnter={(e) => (e.currentTarget.style.filter = "none")}
+                      onMouseLeave={(e) => (e.currentTarget.style.filter = "sepia(1) saturate(2.2) hue-rotate(5deg) brightness(0.95)")}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal/90 via-deep-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
