@@ -19,7 +19,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[88vh] sm:min-h-[90vh] flex items-center overflow-hidden">
       {/* Background Image Slideshow with Overlay */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="sync">
@@ -27,14 +27,16 @@ export function Hero() {
             key={index}
             src={heroImages[index]}
             alt="K.S FUBU Building Construction project showcase"
-            className="absolute inset-0 w-full h-full object-cover"
+            loading="eager"
+            decoding="async"
+            className="absolute inset-0 w-full h-full object-cover object-center"
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.4, ease: "easeOut" }}
+            transition={{ duration: 1.4 }}
           />
         </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-r from-deep-charcoal/90 via-deep-charcoal/70 to-deep-charcoal/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep-charcoal/90 via-deep-charcoal/75 to-deep-charcoal/50 sm:to-deep-charcoal/40" />
       </div>
 
       {/* Content */}
