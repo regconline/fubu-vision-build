@@ -1,12 +1,65 @@
+import { useState, useMemo } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, ImageIcon } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+import residentialModern1 from "@/assets/portfolio/residential-modern-1.jpg";
+import residentialLuxury1 from "@/assets/portfolio/residential-luxury-1.jpg";
+import residentialDouble1 from "@/assets/portfolio/residential-double-storey-1.jpg";
+import structural1 from "@/assets/portfolio/structural-1.jpg";
+import structural2 from "@/assets/portfolio/structural-2.jpg";
+import structural3 from "@/assets/portfolio/structural-3.jpg";
+import civilPlumbing1 from "@/assets/portfolio/civil-plumbing-1.jpg";
+import commercial1 from "@/assets/portfolio/commercial-1.jpg";
+import commercialRender1 from "@/assets/portfolio/commercial-render-1.jpg";
+
+type Category =
+  | "All"
+  | "Residential Construction"
+  | "Commercial Construction"
+  | "Structural Works"
+  | "Civil Engineering"
+  | "Architecture & Design";
+
+interface Project {
+  src: string;
+  title: string;
+  category: Exclude<Category, "All">;
+}
+
+const projects: Project[] = [
+  { src: residentialModern1, title: "Modern Double Storey Residence", category: "Residential Construction" },
+  { src: residentialLuxury1, title: "Luxury Family Home", category: "Residential Construction" },
+  { src: residentialDouble1, title: "Double Storey Brickwork Build", category: "Residential Construction" },
+  { src: structural1, title: "Reinforced Slab & Roof Trusses", category: "Structural Works" },
+  { src: structural2, title: "Structural Columns & Beams", category: "Structural Works" },
+  { src: structural3, title: "Suspended Slab Construction", category: "Structural Works" },
+  { src: civilPlumbing1, title: "Slab Plumbing & Reinforcement", category: "Civil Engineering" },
+  { src: commercial1, title: "Commercial Block Development", category: "Commercial Construction" },
+  { src: commercialRender1, title: "Commercial Building Design", category: "Architecture & Design" },
+];
+
+const categories: Category[] = [
+  "All",
+  "Residential Construction",
+  "Commercial Construction",
+  "Structural Works",
+  "Civil Engineering",
+  "Architecture & Design",
+];
+
 export default function Portfolio() {
+  const [active, setActive] = useState<Category>("All");
+
+  const filtered = useMemo(
+    () => (active === "All" ? projects : projects.filter((p) => p.category === active)),
+    [active]
+  );
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -26,38 +79,74 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Portfolio Grid — Portfolio images to be added by client */}
         <section className="section-padding bg-background">
           <div className="container-wide">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-12"
+              className="text-center mb-10"
             >
               <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-4">Our Completed Projects</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                We have successfully delivered projects across South Africa for government clients,
-                corporate partners and private individuals.
+                Browse our work by category. We deliver quality across residential, commercial, structural and civil projects.
               </p>
             </motion.div>
 
-            {/* Empty grid ready for client images */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {Array.from({ length: 6 }).map((_, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="aspect-[4/3] bg-section-alt rounded-2xl border-2 border-dashed border-border flex flex-col items-center justify-center gap-3 text-muted-foreground"
-                >
-                  <ImageIcon className="w-10 h-10 opacity-30" />
-                  <span className="text-sm opacity-50">Project image coming soon</span>
-                </motion.div>
-              ))}
+            {/* Category filter */}
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
+              {categories.map((cat) => {
+                const isActive = active === cat;
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => setActive(cat)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium border transition-all ${
+                      isActive
+                        ? "bg-primary text-primary-foreground border-primary shadow-brand-md"
+                        : "bg-section-alt text-foreground border-border hover:border-primary/40 hover:text-primary"
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                );
+              })}
             </div>
+
+            {/* Project grid */}
+            <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <AnimatePresence mode="popLayout">
+                {filtered.map((p) => (
+                  <motion.div
+                    key={p.src}
+                    layout
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.3 }}
+                    className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-section-alt border border-border"
+                  >
+                    <img
+                      src={p.src}
+                      alt={p.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal/90 via-deep-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                      <span className="inline-block text-xs font-semibold text-primary uppercase tracking-wider mb-1">
+                        {p.category}
+                      </span>
+                      <h3 className="text-white font-heading font-bold text-lg leading-tight">{p.title}</h3>
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
+
+            {filtered.length === 0 && (
+              <p className="text-center text-muted-foreground py-12">No projects in this category yet.</p>
+            )}
           </div>
         </section>
 

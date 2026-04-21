@@ -110,7 +110,7 @@ export function Header() {
             <motion.img
               src={logo}
               alt="KS FUBU Building Construction"
-              className={`transition-all duration-300 ${isScrolled ? "h-14" : "h-20"}`}
+              className={`transition-all duration-300 object-contain ${isScrolled ? "h-12 sm:h-14" : "h-16 sm:h-20"}`}
               whileHover={{ scale: 1.02 }}
             />
             <div className={`flex flex-col transition-all duration-300 ${isScrolled ? "gap-0" : "gap-0.5"}`}>

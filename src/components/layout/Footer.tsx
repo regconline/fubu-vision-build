@@ -34,7 +34,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="KS FUBU Building Construction" className="h-16 bg-globe-gray rounded-lg p-1.5" />
+              <img src={logo} alt="KS FUBU Building Construction" className="h-16 w-16 object-contain bg-white rounded-full p-1" />
               <div className="flex flex-col gap-0.5">
                 <span className="font-heading font-bold text-white text-xl tracking-tight leading-none">K.S FUBU</span>
                 <span className="font-medium text-white/60 text-[10px] tracking-wide uppercase">Building Construction</span>
