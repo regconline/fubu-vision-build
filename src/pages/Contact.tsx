@@ -122,7 +122,7 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-6">
-                  <a href="tel:+27793640439" className="flex items-start gap-4 group">
+                  <a href="tel:0631262555" className="flex items-start gap-4 group">
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors">
                       <Phone className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
                     </div>
