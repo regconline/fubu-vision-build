@@ -11,6 +11,7 @@ A React/TypeScript frontend application built with Vite, Tailwind CSS, and shadc
 - **State/Data**: TanStack React Query
 - **Animations**: Framer Motion
 - **Forms**: React Hook Form + Zod validation
+- 
 
 ## Project Structure
 
