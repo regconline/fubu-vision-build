@@ -6,18 +6,44 @@ import { User } from "lucide-react";
 import happyMaja from "@/assets/team/happy-maja.jpg";
 import pheladiNgobeni from "@/assets/team/pheladi-ngobeni.jpg";
 import fransLegwabe from "@/assets/team/frans-legwabe.jpg";
+import katlegoMaja from "@/assets/team/katlego-maja.jpg";
+import ndivhudzannyiMashiane from "@/assets/team/ndivhudzannyi-mashiane.jpg";
 
 interface LeaderProps {
   name: string;
   role: string;
   image: string;
   bio?: string;
+  qualifications?: string[];
+  featured?: boolean;
 }
 
 interface MemberProps {
   name: string;
   role: string;
 }
+
+const founders: LeaderProps[] = [
+  {
+    name: "Katlego Maja",
+    role: "CEO & Founder",
+    image: katlegoMaja,
+    bio: "Founder and Chief Executive Officer of KS FUBU Building Construction. Katlego leads the company's strategic vision, project delivery and engineering excellence across building, civil and telecoms.",
+    qualifications: [
+      "BSc (Hons) Structural Engineering",
+      "Registered Professional Construction Manager",
+      "Certified SHEQ & Project Management Practitioner",
+    ],
+    featured: true,
+  },
+  {
+    name: "Ndivhudzannyi Mashiane",
+    role: "Co-Founder",
+    image: ndivhudzannyiMashiane,
+    bio: "Co-Founder of KS FUBU Building Construction, driving operations, business development and stakeholder partnerships across the company's portfolio.",
+    featured: true,
+  },
+];
 
 const leadership: LeaderProps[] = [
   {
