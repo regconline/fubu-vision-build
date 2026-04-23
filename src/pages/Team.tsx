@@ -69,7 +69,6 @@ const leadership: LeaderProps[] = [
 const constructionManagement: MemberProps[] = [
   { name: "Eric Ngobeni", role: "Construction Manager" },
   { name: "Hendry Maake", role: "Site Manager" },
-  { name: "Katlego Maja", role: "Structural Engineer" },
   { name: "Lazarus Nxumalo", role: "Foreman / Supervisor" },
 ];
 
