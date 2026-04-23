@@ -6,18 +6,44 @@ import { User } from "lucide-react";
 import happyMaja from "@/assets/team/happy-maja.jpg";
 import pheladiNgobeni from "@/assets/team/pheladi-ngobeni.jpg";
 import fransLegwabe from "@/assets/team/frans-legwabe.jpg";
+import katlegoMaja from "@/assets/team/katlego-maja.jpg";
+import ndivhudzannyiMashiane from "@/assets/team/ndivhudzannyi-mashiane.jpg";
 
 interface LeaderProps {
   name: string;
   role: string;
   image: string;
   bio?: string;
+  qualifications?: string[];
+  featured?: boolean;
 }
 
 interface MemberProps {
   name: string;
   role: string;
 }
+
+const founders: LeaderProps[] = [
+  {
+    name: "Katlego Maja",
+    role: "CEO & Founder",
+    image: katlegoMaja,
+    bio: "Founder and Chief Executive Officer of KS FUBU Building Construction. Katlego leads the company's strategic vision, project delivery and engineering excellence across building, civil and telecoms.",
+    qualifications: [
+      "BSc (Hons) Structural Engineering",
+      "Registered Professional Construction Manager",
+      "Certified SHEQ & Project Management Practitioner",
+    ],
+    featured: true,
+  },
+  {
+    name: "Ndivhudzannyi Mashiane",
+    role: "Co-Founder",
+    image: ndivhudzannyiMashiane,
+    bio: "Co-Founder of KS FUBU Building Construction, driving operations, business development and stakeholder partnerships across the company's portfolio.",
+    featured: true,
+  },
+];
 
 const leadership: LeaderProps[] = [
   {
@@ -94,18 +120,32 @@ function LeadershipCard({ leader, delay = 0 }: { leader: LeaderProps; delay?: nu
       transition={{ delay, duration: 0.5 }}
       className="group bg-card rounded-2xl border border-border overflow-hidden shadow-brand-sm hover:shadow-brand-lg transition-all duration-300 hover:-translate-y-1"
     >
-      <div className="aspect-[4/5] overflow-hidden bg-section-alt">
+      <div className="aspect-[4/5] overflow-hidden bg-section-alt relative">
         <img
           src={leader.image}
-          alt={leader.name}
+          alt={`Portrait of ${leader.name}, ${leader.role} at KS FUBU Building Construction`}
           loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-full object-cover grayscale contrast-[1.05] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
         />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-500" />
       </div>
       <div className="p-6">
         <h3 className="font-heading font-bold text-xl text-foreground">{leader.name}</h3>
         <p className="text-primary text-sm font-semibold mt-1 uppercase tracking-wide">{leader.role}</p>
         {leader.bio && <p className="text-muted-foreground text-sm mt-3 leading-relaxed">{leader.bio}</p>}
+        {leader.qualifications && leader.qualifications.length > 0 && (
+          <div className="mt-4 pt-4 border-t border-border">
+            <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">Qualifications</p>
+            <ul className="space-y-1.5">
+              {leader.qualifications.map((q) => (
+                <li key={q} className="text-sm text-muted-foreground flex items-start gap-2">
+                  <span className="text-primary mt-0.5">▸</span>
+                  <span>{q}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </motion.article>
   );
@@ -136,7 +176,12 @@ export default function Team() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "KS FUBU Building Construction (Pty) Ltd",
-    employee: leadership.map((l) => ({
+    founder: founders.map((f) => ({
+      "@type": "Person",
+      name: f.name,
+      jobTitle: f.role,
+    })),
+    employee: [...founders, ...leadership].map((l) => ({
       "@type": "Person",
       name: l.name,
       jobTitle: l.role,
@@ -164,8 +209,36 @@ export default function Team() {
           </div>
         </section>
 
-        {/* Leadership */}
+        {/* Founders */}
         <section className="section-padding bg-background">
+          <div className="container-wide">
+            <motion.header
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center max-w-2xl mx-auto mb-12"
+            >
+              <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+                Founders
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-3">
+                Meet The Founders
+              </h2>
+              <p className="text-muted-foreground">
+                The visionaries who built KS FUBU Building Construction from the ground up.
+              </p>
+            </motion.header>
+
+            <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {founders.map((leader, i) => (
+                <LeadershipCard key={leader.name} leader={leader} delay={i * 0.1} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Leadership */}
+        <section className="section-padding bg-section-alt">
           <div className="container-wide">
             <motion.header
               initial={{ opacity: 0, y: 20 }}
@@ -193,7 +266,7 @@ export default function Team() {
         </section>
 
         {/* Construction Team */}
-        <section className="section-padding bg-section-alt">
+        <section className="section-padding bg-background">
           <div className="container-wide">
             <motion.header
               initial={{ opacity: 0, y: 20 }}
@@ -229,7 +302,7 @@ export default function Team() {
         </section>
 
         {/* Telecom & Site Team */}
-        <section className="section-padding bg-background">
+        <section className="section-padding bg-section-alt">
           <div className="container-wide">
             <motion.header
               initial={{ opacity: 0, y: 20 }}
