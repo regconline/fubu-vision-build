@@ -209,8 +209,36 @@ export default function Team() {
           </div>
         </section>
 
-        {/* Leadership */}
+        {/* Founders */}
         <section className="section-padding bg-background">
+          <div className="container-wide">
+            <motion.header
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center max-w-2xl mx-auto mb-12"
+            >
+              <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+                Founders
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-3">
+                Meet The Founders
+              </h2>
+              <p className="text-muted-foreground">
+                The visionaries who built KS FUBU Building Construction from the ground up.
+              </p>
+            </motion.header>
+
+            <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {founders.map((leader, i) => (
+                <LeadershipCard key={leader.name} leader={leader} delay={i * 0.1} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Leadership */}
+        <section className="section-padding bg-section-alt">
           <div className="container-wide">
             <motion.header
               initial={{ opacity: 0, y: 20 }}
