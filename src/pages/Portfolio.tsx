@@ -172,10 +172,7 @@ export default function Portfolio() {
                       src={p.src}
                       alt={p.title}
                       loading="lazy"
-                      style={{ filter: "sepia(1) saturate(2.2) hue-rotate(5deg) brightness(0.95)" }}
-                      className="w-full h-full object-cover transition-all duration-500 group-hover:!filter-none group-hover:scale-110 group-focus-within:!filter-none group-focus-within:scale-110"
-                      onMouseEnter={(e) => (e.currentTarget.style.filter = "none")}
-                      onMouseLeave={(e) => (e.currentTarget.style.filter = "sepia(1) saturate(2.2) hue-rotate(5deg) brightness(0.95)")}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal/90 via-deep-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
