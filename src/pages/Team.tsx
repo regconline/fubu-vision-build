@@ -266,7 +266,7 @@ export default function Team() {
         </section>
 
         {/* Construction Team */}
-        <section className="section-padding bg-section-alt">
+        <section className="section-padding bg-background">
           <div className="container-wide">
             <motion.header
               initial={{ opacity: 0, y: 20 }}
@@ -302,7 +302,7 @@ export default function Team() {
         </section>
 
         {/* Telecom & Site Team */}
-        <section className="section-padding bg-background">
+        <section className="section-padding bg-section-alt">
           <div className="container-wide">
             <motion.header
               initial={{ opacity: 0, y: 20 }}
