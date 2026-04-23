@@ -120,18 +120,32 @@ function LeadershipCard({ leader, delay = 0 }: { leader: LeaderProps; delay?: nu
       transition={{ delay, duration: 0.5 }}
       className="group bg-card rounded-2xl border border-border overflow-hidden shadow-brand-sm hover:shadow-brand-lg transition-all duration-300 hover:-translate-y-1"
     >
-      <div className="aspect-[4/5] overflow-hidden bg-section-alt">
+      <div className="aspect-[4/5] overflow-hidden bg-section-alt relative">
         <img
           src={leader.image}
-          alt={leader.name}
+          alt={`Portrait of ${leader.name}, ${leader.role} at KS FUBU Building Construction`}
           loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-full object-cover grayscale contrast-[1.05] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
         />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-500" />
       </div>
       <div className="p-6">
         <h3 className="font-heading font-bold text-xl text-foreground">{leader.name}</h3>
         <p className="text-primary text-sm font-semibold mt-1 uppercase tracking-wide">{leader.role}</p>
         {leader.bio && <p className="text-muted-foreground text-sm mt-3 leading-relaxed">{leader.bio}</p>}
+        {leader.qualifications && leader.qualifications.length > 0 && (
+          <div className="mt-4 pt-4 border-t border-border">
+            <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">Qualifications</p>
+            <ul className="space-y-1.5">
+              {leader.qualifications.map((q) => (
+                <li key={q} className="text-sm text-muted-foreground flex items-start gap-2">
+                  <span className="text-primary mt-0.5">▸</span>
+                  <span>{q}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </motion.article>
   );
