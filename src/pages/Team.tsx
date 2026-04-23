@@ -176,7 +176,12 @@ export default function Team() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "KS FUBU Building Construction (Pty) Ltd",
-    employee: leadership.map((l) => ({
+    founder: founders.map((f) => ({
+      "@type": "Person",
+      name: f.name,
+      jobTitle: f.role,
+    })),
+    employee: [...founders, ...leadership].map((l) => ({
       "@type": "Person",
       name: l.name,
       jobTitle: l.role,
