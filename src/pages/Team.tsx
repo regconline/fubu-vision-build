@@ -117,35 +117,35 @@ function LeadershipCard({ leader, delay = 0 }: { leader: LeaderProps; delay?: nu
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 0.5 }}
-      className="group bg-card rounded-2xl border border-border overflow-hidden shadow-brand-sm hover:shadow-brand-lg transition-all duration-300 hover:-translate-y-1"
+      className="group bg-card rounded-2xl border border-border p-6 sm:p-8 shadow-brand-sm hover:shadow-brand-lg transition-all duration-300 hover:-translate-y-1 text-center flex flex-col items-center"
     >
-      <div className="aspect-[4/5] overflow-hidden bg-section-alt relative">
-        <img
-          src={leader.image}
-          alt={`Portrait of ${leader.name}, ${leader.role} at KS FUBU Building Construction`}
-          loading="lazy"
-          className="w-full h-full object-cover grayscale contrast-[1.05] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
-        />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-500" />
+      <div className="relative mb-5">
+        <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary/40 to-primary/0 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500" />
+        <div className="relative w-40 h-40 sm:w-44 sm:h-44 rounded-full overflow-hidden ring-4 ring-border group-hover:ring-primary/60 transition-all duration-500 bg-section-alt">
+          <img
+            src={leader.image}
+            alt={`Portrait of ${leader.name}, ${leader.role} at KS FUBU Building Construction`}
+            loading="lazy"
+            className="w-full h-full object-cover object-top grayscale contrast-[1.05] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
+          />
+        </div>
       </div>
-      <div className="p-6">
-        <h3 className="font-heading font-bold text-xl text-foreground">{leader.name}</h3>
-        <p className="text-primary text-sm font-semibold mt-1 uppercase tracking-wide">{leader.role}</p>
-        {leader.bio && <p className="text-muted-foreground text-sm mt-3 leading-relaxed">{leader.bio}</p>}
-        {leader.qualifications && leader.qualifications.length > 0 && (
-          <div className="mt-4 pt-4 border-t border-border">
-            <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">Qualifications</p>
-            <ul className="space-y-1.5">
-              {leader.qualifications.map((q) => (
-                <li key={q} className="text-sm text-muted-foreground flex items-start gap-2">
-                  <span className="text-primary mt-0.5">▸</span>
-                  <span>{q}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
+      <h3 className="font-heading font-bold text-xl text-foreground">{leader.name}</h3>
+      <p className="text-primary text-sm font-semibold mt-1 uppercase tracking-wide">{leader.role}</p>
+      {leader.bio && <p className="text-muted-foreground text-sm mt-3 leading-relaxed">{leader.bio}</p>}
+      {leader.qualifications && leader.qualifications.length > 0 && (
+        <div className="mt-4 pt-4 border-t border-border w-full">
+          <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">Qualifications</p>
+          <ul className="space-y-1.5 text-left">
+            {leader.qualifications.map((q) => (
+              <li key={q} className="text-sm text-muted-foreground flex items-start gap-2">
+                <span className="text-primary mt-0.5">▸</span>
+                <span>{q}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </motion.article>
   );
 }
