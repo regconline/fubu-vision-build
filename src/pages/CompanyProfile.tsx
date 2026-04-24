@@ -2,7 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
@@ -98,6 +98,13 @@ export default function CompanyProfile() {
                 <p className="mt-8 text-sm text-muted-foreground italic">
                   All compliance documentation available upon request.
                 </p>
+                <div className="mt-6">
+                  <Button variant="secondary" size="lg" asChild>
+                    <a href="/KS_FUBU_Company_Profile-2026.pdf" download>
+                      Download Company Profile <Download className="w-4 h-4 ml-2" />
+                    </a>
+                  </Button>
+                </div>
               </div>
             </motion.div>
           </div>
