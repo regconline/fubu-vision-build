@@ -7,44 +7,23 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import residentialModern1 from "@/assets/portfolio/residential-modern-1.jpg";
-import residentialModern2 from "@/assets/portfolio/residential-modern-2.jpg";
-import residentialLuxury1 from "@/assets/portfolio/residential-luxury-1.jpg";
-import residentialLuxury2 from "@/assets/portfolio/residential-luxury-2.jpg";
-import residentialDouble1 from "@/assets/portfolio/residential-double-storey-1.jpg";
-import residentialDouble2 from "@/assets/portfolio/residential-double-storey-2.jpg";
+import residential1 from "@/assets/portfolio/residential-1.jpg";
+import residential2 from "@/assets/portfolio/residential-2.jpg";
+import residential3 from "@/assets/portfolio/residential-3.jpg";
+import residential4 from "@/assets/portfolio/residential-4.jpg";
+import residential5 from "@/assets/portfolio/residential-5.jpg";
+import commercial1 from "@/assets/portfolio/commercial-1.jpg";
 import structural1 from "@/assets/portfolio/structural-1.jpg";
 import structural2 from "@/assets/portfolio/structural-2.jpg";
 import structural3 from "@/assets/portfolio/structural-3.jpg";
-import structural4 from "@/assets/portfolio/structural-4.jpg";
-import structural5 from "@/assets/portfolio/structural-5.jpg";
-import civilPlumbing1 from "@/assets/portfolio/civil-plumbing-1.jpg";
-import commercial1 from "@/assets/portfolio/commercial-1.jpg";
-import commercialRender1 from "@/assets/portfolio/commercial-render-1.jpg";
-import architecturePlans1 from "@/assets/portfolio/architecture-plans-1.jpg";
-import interiorKitchen1 from "@/assets/portfolio/interior-kitchen-1.jpg";
-import interiorKitchen2 from "@/assets/portfolio/interior-kitchen-2.jpg";
-import interiorBathroom1 from "@/assets/portfolio/interior-bathroom-1.jpg";
-import interiorHallway1 from "@/assets/portfolio/interior-hallway-1.jpg";
-import commercialMagubane1 from "@/assets/portfolio/commercial-magubane-1.jpg";
-import commercialMagubane2 from "@/assets/portfolio/commercial-magubane-2.jpg";
-import commercialMagubane3 from "@/assets/portfolio/commercial-magubane-3.jpg";
-import commercialMagubane4 from "@/assets/portfolio/commercial-magubane-4.jpg";
-import telecomCabling1 from "@/assets/portfolio/telecom-cabling-1.jpg";
-import telecomRooftop1 from "@/assets/portfolio/telecom-rooftop-1.jpg";
-import telecomTowerInstall1 from "@/assets/portfolio/telecom-tower-install-1.jpg";
-import telecomTeam1 from "@/assets/portfolio/telecom-team-1.jpg";
-import telecomTeam2 from "@/assets/portfolio/telecom-team-2.jpg";
+import finishes1 from "@/assets/portfolio/finishes-1.jpg";
 
 type Category =
   | "All"
   | "Residential Construction"
   | "Commercial Construction"
   | "Structural Works"
-  | "Civil Engineering"
-  | "Architecture & Design"
-  | "Interior & Finishes"
-  | "Telecommunications";
+  | "Interior & Finishes";
 
 interface Project {
   src: string;
@@ -53,34 +32,16 @@ interface Project {
 }
 
 const projects: Project[] = [
-  { src: residentialModern1, title: "Modern Double Storey Residence", category: "Residential Construction" },
-  { src: residentialModern2, title: "Contemporary Concrete Residence", category: "Residential Construction" },
-  { src: residentialLuxury1, title: "Luxury Family Home", category: "Residential Construction" },
-  { src: residentialLuxury2, title: "Luxury Pillared Mansion Build", category: "Residential Construction" },
-  { src: residentialDouble1, title: "Double Storey Brickwork Build", category: "Residential Construction" },
-  { src: residentialDouble2, title: "Completed Double Storey Home", category: "Residential Construction" },
-  { src: structural1, title: "Reinforced Slab & Roof Trusses", category: "Structural Works" },
-  { src: structural2, title: "Structural Columns & Beams", category: "Structural Works" },
-  { src: structural3, title: "Suspended Slab Construction", category: "Structural Works" },
-  { src: structural4, title: "Brickwork & Scaffolding Stage", category: "Structural Works" },
-  { src: structural5, title: "Steel Door Frame Installation", category: "Structural Works" },
-  { src: civilPlumbing1, title: "Slab Plumbing & Reinforcement", category: "Civil Engineering" },
-  { src: commercial1, title: "Commercial Block Development", category: "Commercial Construction" },
-  { src: commercialRender1, title: "Commercial Building Design", category: "Architecture & Design" },
-  { src: architecturePlans1, title: "Architectural Plans & Elevations", category: "Architecture & Design" },
-  { src: interiorKitchen1, title: "Modern Kitchen Installation", category: "Interior & Finishes" },
-  { src: interiorKitchen2, title: "Compact Kitchen Fit-Out", category: "Interior & Finishes" },
-  { src: interiorBathroom1, title: "Tiled Bathroom & Vanity", category: "Interior & Finishes" },
-  { src: interiorHallway1, title: "Interior Hallway & Built-In Cupboards", category: "Interior & Finishes" },
-  { src: commercialMagubane1, title: "Magubane Block A — Street View", category: "Architecture & Design" },
-  { src: commercialMagubane2, title: "Magubane Block A — Aerial Render", category: "Architecture & Design" },
-  { src: commercialMagubane3, title: "Magubane Blocks A & B — Site Layout", category: "Commercial Construction" },
-  { src: commercialMagubane4, title: "Magubane Twin Block Development", category: "Commercial Construction" },
-  { src: telecomCabling1, title: "Fibre & Power Cable Management", category: "Telecommunications" },
-  { src: telecomRooftop1, title: "Rooftop Antenna & Microwave Site", category: "Telecommunications" },
-  { src: telecomTowerInstall1, title: "Tower Climb & Antenna Installation", category: "Telecommunications" },
-  { src: telecomTeam1, title: "On-Site Safety & Site Survey", category: "Telecommunications" },
-  { src: telecomTeam2, title: "KS FUBU Telecom Field Crew", category: "Telecommunications" },
+  { src: residential1, title: "Double Storey Residential Build", category: "Residential Construction" },
+  { src: residential2, title: "Hillside Residential Estate", category: "Residential Construction" },
+  { src: residential3, title: "Modern Family Home Construction", category: "Residential Construction" },
+  { src: residential4, title: "Contemporary Concrete Residence", category: "Residential Construction" },
+  { src: residential5, title: "Luxury Cantilever Residence", category: "Residential Construction" },
+  { src: commercial1, title: "Commercial Development Project", category: "Commercial Construction" },
+  { src: structural1, title: "Multi-Storey Structural Frame", category: "Structural Works" },
+  { src: structural2, title: "Reinforced Concrete Structure", category: "Structural Works" },
+  { src: structural3, title: "Suspended Slab & Column Works", category: "Structural Works" },
+  { src: finishes1, title: "Architectural Concrete Finishes", category: "Interior & Finishes" },
 ];
 
 const categories: Category[] = [
@@ -88,10 +49,7 @@ const categories: Category[] = [
   "Residential Construction",
   "Commercial Construction",
   "Structural Works",
-  "Civil Engineering",
-  "Architecture & Design",
   "Interior & Finishes",
-  "Telecommunications",
 ];
 
 export default function Portfolio() {
