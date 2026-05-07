@@ -27,6 +27,16 @@ import structural4 from "@/assets/portfolio/structural-4.jpg";
 import civil1 from "@/assets/portfolio/civil-1.jpg";
 import architecture1 from "@/assets/portfolio/architecture-1.jpg";
 import finishes1 from "@/assets/portfolio/finishes-1.jpg";
+import residential12 from "@/assets/portfolio/residential-12.jpg";
+import residential13 from "@/assets/portfolio/residential-13.jpg";
+import residential14 from "@/assets/portfolio/residential-14.jpg";
+import residential15 from "@/assets/portfolio/residential-15.jpg";
+import residential16 from "@/assets/portfolio/residential-16.jpg";
+import commercial3 from "@/assets/portfolio/commercial-3.jpg";
+import structural5 from "@/assets/portfolio/structural-5.jpg";
+import finishes2 from "@/assets/portfolio/finishes-2.jpg";
+import finishes3 from "@/assets/portfolio/finishes-3.jpg";
+import finishes4 from "@/assets/portfolio/finishes-4.jpg";
 
 type Category =
   | "All"
@@ -64,6 +74,16 @@ const projects: Project[] = [
   { src: civil1, title: "Site Excavation & Foundations", category: "Civil Engineering" },
   { src: architecture1, title: "Build vs Render Concept Design", category: "Architecture & Design" },
   { src: finishes1, title: "Architectural Concrete Finishes", category: "Interior & Finishes" },
+  { src: residential12, title: "Multi-Level Residential Build", category: "Residential Construction" },
+  { src: residential13, title: "Architectural Curved-Roof Home", category: "Residential Construction" },
+  { src: residential14, title: "Estate Homes Under Construction", category: "Residential Construction" },
+  { src: residential15, title: "Townhouse Development In Progress", category: "Residential Construction" },
+  { src: residential16, title: "Two-Storey Townhouse Build", category: "Residential Construction" },
+  { src: commercial3, title: "Apartment Complex Development", category: "Commercial Construction" },
+  { src: structural5, title: "Cantilever Slab & Formwork", category: "Structural Works" },
+  { src: finishes2, title: "Concrete Courtyard Water Feature", category: "Interior & Finishes" },
+  { src: finishes3, title: "Stone Courtyard & Entrance Detail", category: "Interior & Finishes" },
+  { src: finishes4, title: "Concrete Facade & Entry Design", category: "Interior & Finishes" },
 ];
 
 const categories: Category[] = [
