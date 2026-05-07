@@ -72,31 +72,26 @@ const constructionManagement: MemberProps[] = [
   { name: "Lazarus Nxumalo", role: "Foreman / Supervisor" },
 ];
 
-const bricklayers: MemberProps[] = [
-  { name: "Moses Thomas Masilela", role: "Bricklayer" },
-  { name: "Thulani Raymond Mncwabe", role: "Bricklayer" },
-  { name: "Edmond Tshuma", role: "Bricklayer" },
-  { name: "Neo Makgoka", role: "Bricklayer" },
-  { name: "Solomon Nndwamoto Siaruli", role: "Bricklayer" },
-  { name: "Thabang Matlala", role: "Bricklayer" },
-  { name: "Patric Tlaisego Malatji", role: "Bricklayer" },
-  { name: "Phokoane Donald Makuduele", role: "Bricklayer" },
+const constructionWorkforce: MemberProps[] = [
+  { name: "Moses Thomas Masilela", role: "Driver" },
+  { name: "Thulani Raymond Mncwabe", role: "Logistics Manager" },
+  { name: "Edmond Tshuma", role: "Warehouse Manager" },
+  { name: "Neo Makgoka", role: "Transport Supervisor" },
+  { name: "Solomon Nndwamoto Siaruli", role: "Installation Supervisor" },
+  { name: "Thabang Matlala", role: "Maintenance Supervisor" },
+  { name: "Patric Tlaisego Malatji", role: "Vendor / Contractor Manager" },
+  { name: "Phokoane Donald Makuduele", role: "Quality Control Manager" },
+  { name: "Johannes Vilanculo", role: "Pricing & Promotions Manager" },
+  { name: "Matsobane Ezekiel Sathikge", role: "Sales Manager" },
+  { name: "Joachim Moobi", role: "Key Accounts Manager" },
+  { name: "Lucky Kubayi", role: "Customs & Import/Export Manager" },
+  { name: "Phataphata Ngobeni", role: "Branch Manager" },
+  { name: "Senanelo Kumalo", role: "Route Planning Supervisor" },
+  { name: "Mathews Khondlo", role: "Risk Manager" },
+  { name: "Phethugo Jerry Ngomane", role: "HSE Coordinator" },
+  { name: "Tjetjela Ezekiel Ngobeni", role: "Safety Audit & Inspection Manager" },
+  { name: "Tshepo Steven Maake", role: "Safety Administrator (Senior)" },
 ];
-
-const labourers: MemberProps[] = [
-  { name: "Sandh Johannes Vilanculo", role: "Labourer" },
-  { name: "Joachim Moobi", role: "Labourer" },
-  { name: "Matsobane Ezekiel Sathikge", role: "Labourer" },
-  { name: "Phataphata Ngobeni", role: "Labourer" },
-  { name: "Lucky Kubayi", role: "Labourer" },
-  { name: "Mathews Khondlo", role: "Labourer" },
-  { name: "Senanelo Kumalo", role: "Labourer" },
-  { name: "Tjetjela Ezekiel Ngobeni", role: "Labourer" },
-  { name: "Phethugo Jerry Ngomane", role: "Labourer" },
-  { name: "Tshepo Steven Maake", role: "Labourer" },
-];
-
-const constructionWorkforce: MemberProps[] = [...bricklayers, ...labourers];
 
 const telecomTeam: MemberProps[] = [
   { name: "Tsotetsi Bafana Andries", role: "RF Engineer & Rope Access Technician" },
