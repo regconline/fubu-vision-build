@@ -12,10 +12,20 @@ import residential2 from "@/assets/portfolio/residential-2.jpg";
 import residential3 from "@/assets/portfolio/residential-3.jpg";
 import residential4 from "@/assets/portfolio/residential-4.jpg";
 import residential5 from "@/assets/portfolio/residential-5.jpg";
+import residential6 from "@/assets/portfolio/residential-6.jpg";
+import residential7 from "@/assets/portfolio/residential-7.jpg";
+import residential8 from "@/assets/portfolio/residential-8.jpg";
+import residential9 from "@/assets/portfolio/residential-9.jpg";
+import residential10 from "@/assets/portfolio/residential-10.jpg";
+import residential11 from "@/assets/portfolio/residential-11.jpg";
 import commercial1 from "@/assets/portfolio/commercial-1.jpg";
+import commercial2 from "@/assets/portfolio/commercial-2.jpg";
 import structural1 from "@/assets/portfolio/structural-1.jpg";
 import structural2 from "@/assets/portfolio/structural-2.jpg";
 import structural3 from "@/assets/portfolio/structural-3.jpg";
+import structural4 from "@/assets/portfolio/structural-4.jpg";
+import civil1 from "@/assets/portfolio/civil-1.jpg";
+import architecture1 from "@/assets/portfolio/architecture-1.jpg";
 import finishes1 from "@/assets/portfolio/finishes-1.jpg";
 
 type Category =
@@ -23,6 +33,8 @@ type Category =
   | "Residential Construction"
   | "Commercial Construction"
   | "Structural Works"
+  | "Civil Engineering"
+  | "Architecture & Design"
   | "Interior & Finishes";
 
 interface Project {
@@ -37,10 +49,20 @@ const projects: Project[] = [
   { src: residential3, title: "Modern Family Home Construction", category: "Residential Construction" },
   { src: residential4, title: "Contemporary Concrete Residence", category: "Residential Construction" },
   { src: residential5, title: "Luxury Cantilever Residence", category: "Residential Construction" },
+  { src: residential6, title: "Modern Two-Storey Build In Progress", category: "Residential Construction" },
+  { src: residential7, title: "Curved Roof Architectural Home", category: "Residential Construction" },
+  { src: residential8, title: "Twin Modern Villas Build", category: "Residential Construction" },
+  { src: residential9, title: "Courtyard Residence Construction", category: "Residential Construction" },
+  { src: residential10, title: "Completed Luxury Family Home", category: "Residential Construction" },
+  { src: residential11, title: "Hillside Modern Residence", category: "Residential Construction" },
   { src: commercial1, title: "Commercial Development Project", category: "Commercial Construction" },
+  { src: commercial2, title: "Commercial Concrete Structure", category: "Commercial Construction" },
   { src: structural1, title: "Multi-Storey Structural Frame", category: "Structural Works" },
   { src: structural2, title: "Reinforced Concrete Structure", category: "Structural Works" },
   { src: structural3, title: "Suspended Slab & Column Works", category: "Structural Works" },
+  { src: structural4, title: "Cantilever Beam & Slab Works", category: "Structural Works" },
+  { src: civil1, title: "Site Excavation & Foundations", category: "Civil Engineering" },
+  { src: architecture1, title: "Build vs Render Concept Design", category: "Architecture & Design" },
   { src: finishes1, title: "Architectural Concrete Finishes", category: "Interior & Finishes" },
 ];
 
@@ -49,6 +71,8 @@ const categories: Category[] = [
   "Residential Construction",
   "Commercial Construction",
   "Structural Works",
+  "Civil Engineering",
+  "Architecture & Design",
   "Interior & Finishes",
 ];
 
