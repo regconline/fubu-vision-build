@@ -47,6 +47,16 @@ import telecom7 from "@/assets/portfolio/telecom-7.jpg";
 import telecom8 from "@/assets/portfolio/telecom-8.jpg";
 import telecom9 from "@/assets/portfolio/telecom-9.jpg";
 import telecom10 from "@/assets/portfolio/telecom-10.jpg";
+import telecom11 from "@/assets/portfolio/telecom-11.jpg";
+import telecom12 from "@/assets/portfolio/telecom-12.jpg";
+import telecom13 from "@/assets/portfolio/telecom-13.jpg";
+import telecom14 from "@/assets/portfolio/telecom-14.jpg";
+import telecom15 from "@/assets/portfolio/telecom-15.jpg";
+import telecom16 from "@/assets/portfolio/telecom-16.jpg";
+import telecom17 from "@/assets/portfolio/telecom-17.jpg";
+import telecom18 from "@/assets/portfolio/telecom-18.jpg";
+import telecom19 from "@/assets/portfolio/telecom-19.jpg";
+import telecom20 from "@/assets/portfolio/telecom-20.jpg";
 
 type Category =
   | "All"
@@ -105,6 +115,16 @@ const projects: Project[] = [
   { src: telecom8, title: "Base Station Outdoor Cabinet", category: "Telecommunications" },
   { src: telecom9, title: "Power & Rectifier Cabinet Wiring", category: "Telecommunications" },
   { src: telecom10, title: "Pole-Mounted RRU Installation", category: "Telecommunications" },
+  { src: telecom11, title: "Tower Base Bolt & Foundation Works", category: "Telecommunications" },
+  { src: telecom12, title: "Site Measurement & Setting Out", category: "Civil Engineering" },
+  { src: telecom13, title: "Cable Conduit Routing & Measurement", category: "Civil Engineering" },
+  { src: telecom14, title: "On-Site Cabinet Installation Team", category: "Telecommunications" },
+  { src: telecom15, title: "ZTE Power & Rectifier System", category: "Telecommunications" },
+  { src: telecom16, title: "Outdoor Telecoms Cabinet Build", category: "Telecommunications" },
+  { src: telecom17, title: "Cable Duct Concrete Plinth", category: "Civil Engineering" },
+  { src: telecom18, title: "Cable Trenching & Cabinet Routing", category: "Civil Engineering" },
+  { src: telecom19, title: "ZTE Cabinet Site Commissioning", category: "Telecommunications" },
+  { src: telecom20, title: "Huawei Rack & PDU Cabling", category: "Telecommunications" },
 ];
 
 const categories: Category[] = [
