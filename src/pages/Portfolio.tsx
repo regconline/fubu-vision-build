@@ -37,6 +37,16 @@ import structural5 from "@/assets/portfolio/structural-5.jpg";
 import finishes2 from "@/assets/portfolio/finishes-2.jpg";
 import finishes3 from "@/assets/portfolio/finishes-3.jpg";
 import finishes4 from "@/assets/portfolio/finishes-4.jpg";
+import telecom1 from "@/assets/portfolio/telecom-1.jpg";
+import telecom2 from "@/assets/portfolio/telecom-2.jpg";
+import telecom3 from "@/assets/portfolio/telecom-3.jpg";
+import telecom4 from "@/assets/portfolio/telecom-4.jpg";
+import telecom5 from "@/assets/portfolio/telecom-5.jpg";
+import telecom6 from "@/assets/portfolio/telecom-6.jpg";
+import telecom7 from "@/assets/portfolio/telecom-7.jpg";
+import telecom8 from "@/assets/portfolio/telecom-8.jpg";
+import telecom9 from "@/assets/portfolio/telecom-9.jpg";
+import telecom10 from "@/assets/portfolio/telecom-10.jpg";
 
 type Category =
   | "All"
@@ -45,7 +55,8 @@ type Category =
   | "Structural Works"
   | "Civil Engineering"
   | "Architecture & Design"
-  | "Interior & Finishes";
+  | "Interior & Finishes"
+  | "Telecommunications";
 
 interface Project {
   src: string;
@@ -84,6 +95,16 @@ const projects: Project[] = [
   { src: finishes2, title: "Concrete Courtyard Water Feature", category: "Interior & Finishes" },
   { src: finishes3, title: "Stone Courtyard & Entrance Detail", category: "Interior & Finishes" },
   { src: finishes4, title: "Concrete Facade & Entry Design", category: "Interior & Finishes" },
+  { src: telecom1, title: "ZTE Radio Unit Installation", category: "Telecommunications" },
+  { src: telecom2, title: "Rooftop Antenna Mast Installation", category: "Telecommunications" },
+  { src: telecom3, title: "Rooftop Cable Tray & Conduit Works", category: "Telecommunications" },
+  { src: telecom4, title: "Tripod Mounted RRU Setup", category: "Telecommunications" },
+  { src: telecom5, title: "High-Rise Sector Antenna Installation", category: "Telecommunications" },
+  { src: telecom6, title: "Mobile Generator Site Power", category: "Telecommunications" },
+  { src: telecom7, title: "Outdoor Cabinet Levelling & Install", category: "Telecommunications" },
+  { src: telecom8, title: "Base Station Outdoor Cabinet", category: "Telecommunications" },
+  { src: telecom9, title: "Power & Rectifier Cabinet Wiring", category: "Telecommunications" },
+  { src: telecom10, title: "Pole-Mounted RRU Installation", category: "Telecommunications" },
 ];
 
 const categories: Category[] = [
@@ -94,6 +115,7 @@ const categories: Category[] = [
   "Civil Engineering",
   "Architecture & Design",
   "Interior & Finishes",
+  "Telecommunications",
 ];
 
 export default function Portfolio() {
