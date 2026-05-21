@@ -15,7 +15,7 @@ const credentials = [
   "CIDB Registered",
   "NHBRC Registered",
   "COIDA Registered",
-  "Insured — R1,000,000 Coverage (Outsurance)",
+  "Insured — R10,000,000 Coverage (Ten Million Rands) (Outsurance)",
   "ECSA Accredited",
 ];
 
