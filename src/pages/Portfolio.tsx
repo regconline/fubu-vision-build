@@ -57,6 +57,16 @@ import telecom17 from "@/assets/portfolio/telecom-17.jpg";
 import telecom18 from "@/assets/portfolio/telecom-18.jpg";
 import telecom19 from "@/assets/portfolio/telecom-19.jpg";
 import telecom20 from "@/assets/portfolio/telecom-20.jpg";
+import fleet1 from "@/assets/portfolio/fleet-1.jpg";
+import fleet2 from "@/assets/portfolio/fleet-2.jpg";
+import fleet3 from "@/assets/portfolio/fleet-3.jpg";
+import fleet4 from "@/assets/portfolio/fleet-4.jpg";
+import fleet5 from "@/assets/portfolio/fleet-5.jpg";
+import fleet6 from "@/assets/portfolio/fleet-6.jpg";
+import fleet7 from "@/assets/portfolio/fleet-7.jpg";
+import fleet8 from "@/assets/portfolio/fleet-8.jpg";
+import fleet9 from "@/assets/portfolio/fleet-9.jpg";
+import fleet10 from "@/assets/portfolio/fleet-10.jpg";
 
 type Category =
   | "All"
@@ -66,7 +76,8 @@ type Category =
   | "Civil Engineering"
   | "Architecture & Design"
   | "Interior & Finishes"
-  | "Telecommunications";
+  | "Telecommunications"
+  | "Fleet & Operations";
 
 interface Project {
   src: string;
@@ -125,6 +136,16 @@ const projects: Project[] = [
   { src: telecom18, title: "Cable Trenching & Cabinet Routing", category: "Civil Engineering" },
   { src: telecom19, title: "ZTE Cabinet Site Commissioning", category: "Telecommunications" },
   { src: telecom20, title: "Huawei Rack & PDU Cabling", category: "Telecommunications" },
+  { src: fleet1, title: "Branded Site Vehicle On-Route", category: "Fleet & Operations" },
+  { src: fleet2, title: "K.S FUBU Branded Company Car", category: "Fleet & Operations" },
+  { src: fleet3, title: "Site PPE & Vehicle Ready For Dispatch", category: "Fleet & Operations" },
+  { src: fleet4, title: "Mahindra Scorpio Pickup Fleet", category: "Fleet & Operations" },
+  { src: fleet5, title: "Branded 4x4 Site Bakkie", category: "Fleet & Operations" },
+  { src: fleet6, title: "Mahindra Scorpio Crew Vehicle", category: "Fleet & Operations" },
+  { src: fleet7, title: "Concrete Mixer & Site Trailer", category: "Fleet & Operations" },
+  { src: fleet8, title: "Ford Ranger With Tools On-Site", category: "Fleet & Operations" },
+  { src: fleet9, title: "Ford Ranger With Site Trailer", category: "Fleet & Operations" },
+  { src: fleet10, title: "Site Inspection By KS FUBU Team", category: "Fleet & Operations" },
 ];
 
 const categories: Category[] = [
@@ -136,6 +157,7 @@ const categories: Category[] = [
   "Architecture & Design",
   "Interior & Finishes",
   "Telecommunications",
+  "Fleet & Operations",
 ];
 
 export default function Portfolio() {
