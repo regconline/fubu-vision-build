@@ -73,11 +73,7 @@ const constructionManagement: MemberProps[] = [
 ];
 
 const constructionWorkforce: MemberProps[] = [
-  { name: "Moses Thomas Masilela", role: "Driver" },
   { name: "Thulani Raymond Mncwabe", role: "Logistics Manager" },
-  { name: "Edmond Tshuma", role: "Warehouse Manager" },
-  { name: "Neo Makgoka", role: "Transport Supervisor" },
-  { name: "Solomon Nndwamoto Siaruli", role: "Installation Supervisor" },
   { name: "Thabang Matlala", role: "Maintenance Supervisor" },
   { name: "Patric Tlaisego Malatji", role: "Vendor / Contractor Manager" },
   { name: "Phokoane Donald Makuduele", role: "Quality Control Manager" },
