@@ -111,11 +111,11 @@ export function Hero() {
             </div>
             <div className="hidden sm:block w-px h-4 bg-white/30" />
             <a
-              href="tel:0793640439"
+              href="tel:0110526717"
               className="flex items-center gap-2 hover:text-primary transition-colors"
             >
               <Phone className="w-5 h-5 text-primary" />
-              <span>079 364 0439</span>
+              <span>011 052 6717</span>
             </a>
           </motion.div>
 

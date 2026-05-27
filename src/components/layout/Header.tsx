@@ -88,13 +88,13 @@ export function Header() {
       <div className="bg-secondary text-secondary-foreground py-2 px-4 hidden lg:block">
         <div className="container-wide flex justify-between items-center text-sm">
           <div className="flex items-center gap-6">
-            <a href="tel:0793640439" className="flex items-center gap-2 hover:text-primary transition-colors">
-              <Phone size={14} />
-              079 364 0439
-            </a>
             <a href="tel:0110526717" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Phone size={14} />
               011 052 6717
+            </a>
+            <a href="tel:0793640439" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Phone size={14} />
+              079 364 0439
             </a>
             <a href="mailto:info@ksfubuconstruction.co.za" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Mail size={14} />
