@@ -122,13 +122,13 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-6">
-                  <a href="tel:+27 79 364 0439" className="flex items-start gap-4 group">
+                  <a href="tel:0793640439" className="flex items-start gap-4 group">
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors">
                       <Phone className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Phone</p>
-                      <p className="text-muted-foreground group-hover:text-primary transition-colors">+27 79 364 0439 / +27 84 293 4256</p>
+                      <p className="text-muted-foreground group-hover:text-primary transition-colors">079 364 0439 / 084 293 4256</p>
                       <p className="text-muted-foreground group-hover:text-primary transition-colors">011 052 6717</p>
                     </div>
                   </a>
@@ -207,7 +207,7 @@ export default function Contact() {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone Number *</Label>
-                      <Input id="phone" type="tel" required maxLength={20} placeholder="+27 XX XXX XXXX" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                      <Input id="phone" type="tel" required maxLength={20} placeholder="0XX XXX XXXX" value={phone} onChange={(e) => setPhone(e.target.value)} />
                     </div>
                   </div>
 

@@ -44,7 +44,7 @@ export function CTA() {
               className="border-white text-white hover:bg-white hover:text-secondary"
               asChild
             >
-              <a href="tel:+27793640439">
+              <a href="tel:0793640439">
                 <Phone className="w-5 h-5 mr-2" />
                 Call Now
               </a>

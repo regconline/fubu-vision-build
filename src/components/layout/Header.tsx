@@ -88,9 +88,9 @@ export function Header() {
       <div className="bg-secondary text-secondary-foreground py-2 px-4 hidden lg:block">
         <div className="container-wide flex justify-between items-center text-sm">
           <div className="flex items-center gap-6">
-            <a href="tel:+27793640439" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <a href="tel:0793640439" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Phone size={14} />
-              +27 79 364 0439
+              079 364 0439
             </a>
             <a href="tel:0110526717" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Phone size={14} />
@@ -258,7 +258,7 @@ export function Header() {
                   <Link to="/contact">Request Free Quote</Link>
                 </Button>
                 <div className="flex gap-3">
-                  <a href="tel:+27793640439" className="flex-1 flex items-center justify-center gap-2 py-3 bg-secondary text-secondary-foreground rounded-lg font-medium">
+                  <a href="tel:0793640439" className="flex-1 flex items-center justify-center gap-2 py-3 bg-secondary text-secondary-foreground rounded-lg font-medium">
                     <Phone size={18} />
                     Call
                   </a>
