@@ -92,6 +92,10 @@ export function Header() {
               <Phone size={14} />
               +27 79 364 0439
             </a>
+            <a href="tel:0110526717" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Phone size={14} />
+              011 052 6717
+            </a>
             <a href="mailto:info@ksfubuconstruction.co.za" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Mail size={14} />
               info@ksfubuconstruction.co.za
