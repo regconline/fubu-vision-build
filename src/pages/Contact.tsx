@@ -128,8 +128,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Phone</p>
-                      <p className="text-muted-foreground group-hover:text-primary transition-colors">079 364 0439 / 084 293 4256</p>
                       <p className="text-muted-foreground group-hover:text-primary transition-colors">011 052 6717</p>
+                      <p className="text-muted-foreground group-hover:text-primary transition-colors">079 364 0439 / 084 293 4256</p>
                     </div>
                   </a>
 
