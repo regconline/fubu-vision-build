@@ -129,6 +129,7 @@ export default function Contact() {
                     <div>
                       <p className="font-medium text-foreground">Phone</p>
                       <p className="text-muted-foreground group-hover:text-primary transition-colors">+27 79 364 0439 / +27 84 293 4256</p>
+                      <p className="text-muted-foreground group-hover:text-primary transition-colors">011 052 6717</p>
                     </div>
                   </a>
 
