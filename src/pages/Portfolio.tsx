@@ -67,6 +67,13 @@ import fleet7 from "@/assets/portfolio/fleet-7.jpg";
 import fleet8 from "@/assets/portfolio/fleet-8.jpg";
 import fleet9 from "@/assets/portfolio/fleet-9.jpg";
 import fleet10 from "@/assets/portfolio/fleet-10.jpg";
+import woodmead1 from "@/assets/portfolio/woodmead-build-1.jpg.asset.json";
+import woodmead2 from "@/assets/portfolio/woodmead-build-2.jpg.asset.json";
+import woodmead3 from "@/assets/portfolio/woodmead-build-3.jpg.asset.json";
+import woodmead4 from "@/assets/portfolio/woodmead-build-4.jpg.asset.json";
+import woodmead5 from "@/assets/portfolio/woodmead-build-5.jpg.asset.json";
+import woodmead6 from "@/assets/portfolio/woodmead-build-6.jpg.asset.json";
+import woodmead7 from "@/assets/portfolio/woodmead-build-7.jpg.asset.json";
 
 type Category =
   | "All"
@@ -146,6 +153,13 @@ const projects: Project[] = [
   { src: fleet8, title: "Ford Ranger With Tools On-Site", category: "Fleet & Operations" },
   { src: fleet9, title: "Ford Ranger With Site Trailer", category: "Fleet & Operations" },
   { src: fleet10, title: "Site Inspection By KS FUBU Team", category: "Fleet & Operations" },
+  { src: woodmead1.url, title: "Hillside Modern Residence Build", category: "Residential Construction" },
+  { src: woodmead7.url, title: "Street Facade Concrete Residence", category: "Residential Construction" },
+  { src: woodmead3.url, title: "Aerial View Of Concrete Villa Build", category: "Residential Construction" },
+  { src: woodmead5.url, title: "Estate Residential Development", category: "Residential Construction" },
+  { src: woodmead4.url, title: "Steel Roof Structure & Concrete Frame", category: "Structural Works" },
+  { src: woodmead6.url, title: "Rooftop Terrace & Concrete Finishes", category: "Interior & Finishes" },
+  { src: woodmead2.url, title: "Architectural Concrete Column Detail", category: "Architecture & Design" },
 ];
 
 const categories: Category[] = [
