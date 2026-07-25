@@ -153,6 +153,14 @@ const projects: Project[] = [
   { src: fleet8, title: "Ford Ranger With Tools On-Site", category: "Fleet & Operations" },
   { src: fleet9, title: "Ford Ranger With Site Trailer", category: "Fleet & Operations" },
   { src: fleet10, title: "Site Inspection By KS FUBU Team", category: "Fleet & Operations" },
+  { src: woodmead1.url, title: "Hillside Modern Residence Build", category: "Residential Construction" },
+  { src: woodmead7.url, title: "Cantilever Family Home Progress", category: "Residential Construction" },
+  { src: woodmead2.url, title: "Aerial View Of Concrete Villa Build", category: "Residential Construction" },
+  { src: woodmead4.url, title: "Estate Residential Development", category: "Residential Construction" },
+  { src: woodmead6.url, title: "Street Facade Concrete Residence", category: "Residential Construction" },
+  { src: woodmead3.url, title: "Steel Roof Structure & Concrete Frame", category: "Structural Works" },
+  { src: woodmead5.url, title: "Rooftop Terrace & Concrete Finishes", category: "Interior & Finishes" },
+  { src: woodmead1.url, title: "Architectural Concrete Column Detail", category: "Architecture & Design" },
 ];
 
 const categories: Category[] = [
