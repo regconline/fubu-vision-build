@@ -67,6 +67,13 @@ import fleet7 from "@/assets/portfolio/fleet-7.jpg";
 import fleet8 from "@/assets/portfolio/fleet-8.jpg";
 import fleet9 from "@/assets/portfolio/fleet-9.jpg";
 import fleet10 from "@/assets/portfolio/fleet-10.jpg";
+import woodmead1 from "@/assets/portfolio/woodmead-build-1.jpg.asset.json";
+import woodmead2 from "@/assets/portfolio/woodmead-build-2.jpg.asset.json";
+import woodmead3 from "@/assets/portfolio/woodmead-build-3.jpg.asset.json";
+import woodmead4 from "@/assets/portfolio/woodmead-build-4.jpg.asset.json";
+import woodmead5 from "@/assets/portfolio/woodmead-build-5.jpg.asset.json";
+import woodmead6 from "@/assets/portfolio/woodmead-build-6.jpg.asset.json";
+import woodmead7 from "@/assets/portfolio/woodmead-build-7.jpg.asset.json";
 
 type Category =
   | "All"
