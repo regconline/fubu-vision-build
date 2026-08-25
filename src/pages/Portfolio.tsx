@@ -164,6 +164,16 @@ const projects: Project[] = [
   { src: structural6, title: "Steel Roof Structure & Concrete Frame", category: "Structural Works" },
   { src: finishes5, title: "Rooftop Terrace & Concrete Finishes", category: "Interior & Finishes" },
   { src: architecture2, title: "Architectural Concrete Column Detail", category: "Architecture & Design" },
+  { src: residential21, title: "Double Storey Apartment Block Finishing", category: "Residential Construction" },
+  { src: residential22, title: "Completed Two-Storey Apartment Complex", category: "Residential Construction" },
+  { src: residential23, title: "Apartment Block Painting & Handrails", category: "Residential Construction" },
+  { src: residential24, title: "Plastered Double Storey Residential Units", category: "Residential Construction" },
+  { src: residential25, title: "Estate Roofing & Brickwork Progress", category: "Residential Construction" },
+  { src: residential26, title: "Aerial View Of Residential Estate Build", category: "Residential Construction" },
+  { src: residential27, title: "Completed Estate Development Aerial", category: "Residential Construction" },
+  { src: structural7, title: "Brickwork Shell & Slab Construction", category: "Structural Works" },
+  { src: structural8, title: "Double Storey Masonry Structure", category: "Structural Works" },
+  { src: civil2, title: "Bulk Earthworks & Site Plant", category: "Civil Engineering" },
 ];
 
 const categories: Category[] = [
