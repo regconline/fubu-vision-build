@@ -30,9 +30,6 @@ import finishes1 from "@/assets/portfolio/finishes-1.jpg";
 import residential12 from "@/assets/portfolio/residential-12.jpg";
 import residential13 from "@/assets/portfolio/residential-13.jpg";
 import residential14 from "@/assets/portfolio/residential-14.jpg";
-import residential15 from "@/assets/portfolio/residential-15.jpg";
-import residential16 from "@/assets/portfolio/residential-16.jpg";
-import commercial3 from "@/assets/portfolio/commercial-3.jpg";
 import structural5 from "@/assets/portfolio/structural-5.jpg";
 import finishes2 from "@/assets/portfolio/finishes-2.jpg";
 import finishes3 from "@/assets/portfolio/finishes-3.jpg";
@@ -67,13 +64,13 @@ import fleet7 from "@/assets/portfolio/fleet-7.jpg";
 import fleet8 from "@/assets/portfolio/fleet-8.jpg";
 import fleet9 from "@/assets/portfolio/fleet-9.jpg";
 import fleet10 from "@/assets/portfolio/fleet-10.jpg";
-import woodmead1 from "@/assets/portfolio/woodmead-build-1.jpg.asset.json";
-import woodmead2 from "@/assets/portfolio/woodmead-build-2.jpg.asset.json";
-import woodmead3 from "@/assets/portfolio/woodmead-build-3.jpg.asset.json";
-import woodmead4 from "@/assets/portfolio/woodmead-build-4.jpg.asset.json";
-import woodmead5 from "@/assets/portfolio/woodmead-build-5.jpg.asset.json";
-import woodmead6 from "@/assets/portfolio/woodmead-build-6.jpg.asset.json";
-import woodmead7 from "@/assets/portfolio/woodmead-build-7.jpg.asset.json";
+import residential17 from "@/assets/portfolio/residential-17.jpg";
+import residential18 from "@/assets/portfolio/residential-18.jpg";
+import residential19 from "@/assets/portfolio/residential-19.jpg";
+import residential20 from "@/assets/portfolio/residential-20.jpg";
+import structural6 from "@/assets/portfolio/structural-6.jpg";
+import finishes5 from "@/assets/portfolio/finishes-5.jpg";
+import architecture2 from "@/assets/portfolio/architecture-2.jpg";
 
 type Category =
   | "All"
@@ -116,9 +113,6 @@ const projects: Project[] = [
   { src: residential12, title: "Multi-Level Residential Build", category: "Residential Construction" },
   { src: residential13, title: "Architectural Curved-Roof Home", category: "Residential Construction" },
   { src: residential14, title: "Estate Homes Under Construction", category: "Residential Construction" },
-  { src: residential15, title: "Townhouse Development In Progress", category: "Residential Construction" },
-  { src: residential16, title: "Two-Storey Townhouse Build", category: "Residential Construction" },
-  { src: commercial3, title: "Apartment Complex Development", category: "Commercial Construction" },
   { src: structural5, title: "Cantilever Slab & Formwork", category: "Structural Works" },
   { src: finishes2, title: "Concrete Courtyard Water Feature", category: "Interior & Finishes" },
   { src: finishes3, title: "Stone Courtyard & Entrance Detail", category: "Interior & Finishes" },
@@ -153,13 +147,13 @@ const projects: Project[] = [
   { src: fleet8, title: "Ford Ranger With Tools On-Site", category: "Fleet & Operations" },
   { src: fleet9, title: "Ford Ranger With Site Trailer", category: "Fleet & Operations" },
   { src: fleet10, title: "Site Inspection By KS FUBU Team", category: "Fleet & Operations" },
-  { src: woodmead1.url, title: "Hillside Modern Residence Build", category: "Residential Construction" },
-  { src: woodmead7.url, title: "Street Facade Concrete Residence", category: "Residential Construction" },
-  { src: woodmead3.url, title: "Aerial View Of Concrete Villa Build", category: "Residential Construction" },
-  { src: woodmead5.url, title: "Estate Residential Development", category: "Residential Construction" },
-  { src: woodmead4.url, title: "Steel Roof Structure & Concrete Frame", category: "Structural Works" },
-  { src: woodmead6.url, title: "Rooftop Terrace & Concrete Finishes", category: "Interior & Finishes" },
-  { src: woodmead2.url, title: "Architectural Concrete Column Detail", category: "Architecture & Design" },
+  { src: residential17, title: "Hillside Modern Residence Build", category: "Residential Construction" },
+  { src: residential18, title: "Street Facade Concrete Residence", category: "Residential Construction" },
+  { src: residential19, title: "Aerial View Of Concrete Villa Build", category: "Residential Construction" },
+  { src: residential20, title: "Estate Residential Development", category: "Residential Construction" },
+  { src: structural6, title: "Steel Roof Structure & Concrete Frame", category: "Structural Works" },
+  { src: finishes5, title: "Rooftop Terrace & Concrete Finishes", category: "Interior & Finishes" },
+  { src: architecture2, title: "Architectural Concrete Column Detail", category: "Architecture & Design" },
 ];
 
 const categories: Category[] = [
