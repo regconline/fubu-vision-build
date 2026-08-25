@@ -71,6 +71,16 @@ import residential20 from "@/assets/portfolio/residential-20.jpg";
 import structural6 from "@/assets/portfolio/structural-6.jpg";
 import finishes5 from "@/assets/portfolio/finishes-5.jpg";
 import architecture2 from "@/assets/portfolio/architecture-2.jpg";
+import residential21 from "@/assets/portfolio/residential-21.jpg";
+import residential22 from "@/assets/portfolio/residential-22.jpg";
+import residential23 from "@/assets/portfolio/residential-23.jpg";
+import residential24 from "@/assets/portfolio/residential-24.jpg";
+import residential25 from "@/assets/portfolio/residential-25.jpg";
+import residential26 from "@/assets/portfolio/residential-26.jpg";
+import residential27 from "@/assets/portfolio/residential-27.jpg";
+import structural7 from "@/assets/portfolio/structural-7.jpg";
+import structural8 from "@/assets/portfolio/structural-8.jpg";
+import civil2 from "@/assets/portfolio/civil-2.jpg";
 
 type Category =
   | "All"
@@ -154,6 +164,16 @@ const projects: Project[] = [
   { src: structural6, title: "Steel Roof Structure & Concrete Frame", category: "Structural Works" },
   { src: finishes5, title: "Rooftop Terrace & Concrete Finishes", category: "Interior & Finishes" },
   { src: architecture2, title: "Architectural Concrete Column Detail", category: "Architecture & Design" },
+  { src: residential21, title: "Double Storey Apartment Block Finishing", category: "Residential Construction" },
+  { src: residential22, title: "Completed Two-Storey Apartment Complex", category: "Residential Construction" },
+  { src: residential23, title: "Apartment Block Painting & Handrails", category: "Residential Construction" },
+  { src: residential24, title: "Plastered Double Storey Residential Units", category: "Residential Construction" },
+  { src: residential25, title: "Estate Roofing & Brickwork Progress", category: "Residential Construction" },
+  { src: residential26, title: "Aerial View Of Residential Estate Build", category: "Residential Construction" },
+  { src: residential27, title: "Completed Estate Development Aerial", category: "Residential Construction" },
+  { src: structural7, title: "Brickwork Shell & Slab Construction", category: "Structural Works" },
+  { src: structural8, title: "Double Storey Masonry Structure", category: "Structural Works" },
+  { src: civil2, title: "Bulk Earthworks & Site Plant", category: "Civil Engineering" },
 ];
 
 const categories: Category[] = [
