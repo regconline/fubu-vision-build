@@ -81,6 +81,10 @@ import residential27 from "@/assets/portfolio/residential-27.jpg";
 import structural7 from "@/assets/portfolio/structural-7.jpg";
 import structural8 from "@/assets/portfolio/structural-8.jpg";
 import civil2 from "@/assets/portfolio/civil-2.jpg";
+import residential28 from "@/assets/portfolio/residential-28.jpg";
+import residential29 from "@/assets/portfolio/residential-29.jpg";
+import structural9 from "@/assets/portfolio/structural-9.jpg";
+import civil3 from "@/assets/portfolio/civil-3.jpg";
 
 type Category =
   | "All"
@@ -174,6 +178,10 @@ const projects: Project[] = [
   { src: structural7, title: "Brickwork Shell & Slab Construction", category: "Structural Works" },
   { src: structural8, title: "Double Storey Masonry Structure", category: "Structural Works" },
   { src: civil2, title: "Bulk Earthworks & Site Plant", category: "Civil Engineering" },
+  { src: residential28, title: "Estate Cluster Homes Roofing Progress", category: "Residential Construction" },
+  { src: residential29, title: "Aerial Estate Build & Services Trenching", category: "Residential Construction" },
+  { src: structural9, title: "Timber Roof Truss Installation", category: "Structural Works" },
+  { src: civil3, title: "Site Clearing & Earthmoving Plant", category: "Civil Engineering" },
 ];
 
 const categories: Category[] = [
