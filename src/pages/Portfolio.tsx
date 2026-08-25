@@ -71,6 +71,16 @@ import residential20 from "@/assets/portfolio/residential-20.jpg";
 import structural6 from "@/assets/portfolio/structural-6.jpg";
 import finishes5 from "@/assets/portfolio/finishes-5.jpg";
 import architecture2 from "@/assets/portfolio/architecture-2.jpg";
+import residential21 from "@/assets/portfolio/residential-21.jpg";
+import residential22 from "@/assets/portfolio/residential-22.jpg";
+import residential23 from "@/assets/portfolio/residential-23.jpg";
+import residential24 from "@/assets/portfolio/residential-24.jpg";
+import residential25 from "@/assets/portfolio/residential-25.jpg";
+import residential26 from "@/assets/portfolio/residential-26.jpg";
+import residential27 from "@/assets/portfolio/residential-27.jpg";
+import structural7 from "@/assets/portfolio/structural-7.jpg";
+import structural8 from "@/assets/portfolio/structural-8.jpg";
+import civil2 from "@/assets/portfolio/civil-2.jpg";
 
 type Category =
   | "All"
