@@ -178,6 +178,10 @@ const projects: Project[] = [
   { src: structural7, title: "Brickwork Shell & Slab Construction", category: "Structural Works" },
   { src: structural8, title: "Double Storey Masonry Structure", category: "Structural Works" },
   { src: civil2, title: "Bulk Earthworks & Site Plant", category: "Civil Engineering" },
+  { src: residential28, title: "Estate Cluster Homes Roofing Progress", category: "Residential Construction" },
+  { src: residential29, title: "Aerial Estate Build & Services Trenching", category: "Residential Construction" },
+  { src: structural9, title: "Timber Roof Truss Installation", category: "Structural Works" },
+  { src: civil3, title: "Site Clearing & Earthmoving Plant", category: "Civil Engineering" },
 ];
 
 const categories: Category[] = [
